@@ -1,0 +1,33 @@
+{
+  "name": "jtaro-ui",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node ./node_modules/jtaro-module/src/server.js 3040 --config=../../../../jtaro.module.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chjtx/JTaro-UI.git"
+  },
+  "keywords": [
+    "jtaro-ui"
+  ],
+  "author": "BarZu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chjtx/JTaro-UI/issues"
+  },
+  "homepage": "https://github.com/chjtx/JTaro-UI#readme",
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-vue": "^2.0.2",
+    "eslint-plugin-vue": "^2.0.1",
+    "jtaro": "^0.4.6",
+    "jtaro-module": "^0.2.1",
+    "rollup": "^0.41.6",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-paths": "^0.0.1",
+    "rollup-plugin-vue2": "^0.8.0"
+  }
+}

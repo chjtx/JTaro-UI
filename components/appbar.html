@@ -1,0 +1,30 @@
+<style>
+this {
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
+}
+.appbar-left {
+  width: 20%;
+  float: left;
+}
+.appbar-center {
+  width: 60%;
+  height: 100%;
+}
+.appbar-right {
+  width: 20%;
+  float: right;
+}
+</style>
+<div class="j-bg-primary j-font-primary">
+  <div class="appbar-left">
+    <slot name="left"></slot>
+  </div>
+  <div class="appbar-center">
+    <slot name="center"></slot>
+  </div>
+  <div class="appbar-right">
+    <slot name="right"></slot>
+  </div>
+</div>

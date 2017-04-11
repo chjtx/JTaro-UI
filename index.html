@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0">
+    <title>JTaro UI</title>
+    <link rel="stylesheet" href="./base/jtaro-ui.css">
+    <script src="./node_modules/jtaro-module/src/client.js"></script>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script src="./node_modules/jroll/src/jroll.js"></script>
+</head>
+<body>
+    <div id="jtaro_app"></div>
+    <script src="./node_modules/jtaro/dist/jtaro.js"></script>
+    <script>
+       Vue.use(JTaro, {
+           default: 'pages/home'
+       })
+    </script>
+</body>
+</html>

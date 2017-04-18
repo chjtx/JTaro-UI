@@ -230,13 +230,3 @@ div, a, button, input, textarea { outline: none; -webkit-tap-highlight-color: tr
     width: 100%;
 }
 
-/* 涟漪 */
-.j-ripple {
-    width: 1px;
-    height: 1px;
-    background: rgba(0,0,0,.15);
-    border-radius: 100%;
-    -webkit-transition-duration: 500ms;
-    transition-duration: 500ms;
-    transition-timing-function: ease-out
-}

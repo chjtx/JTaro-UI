@@ -18,23 +18,26 @@
     var div = doc.createElement('div')
 
     if (win.getComputedStyle(el).position === 'static') {
-      el.style.cssText = 'position:relative;left:0;top:0;overflow:hidden'
+      el.style.position = 'relative'
+      el.style.left = '0px'
+      el.style.top = '0px'
+      el.style.overflow = 'hidden'
     }
 
-    div.style.cssText = 'position:absolute;left:' + x + 'px;top:' + y + 'px'
-    div.classList.add('j-ripple')
+    div.style.cssText = 'position:absolute;left:' + x + 'px;top:' + y + 'px;width: 1px;height: 1px;background: #000;opacity:0.15;border-radius: 100%;-webkit-transition-duration: 600ms;transition-duration: 600ms;-webkit-transition-timing-function: ease-out;transition-timing-function: ease-out;'
+
     el.appendChild(div)
     setTimeout(function () {
-      div.style.width = 2 * win.innerWidth + 'px'
-      div.style.height = 2 * win.innerWidth + 'px'
-      div.style.left = x - win.innerWidth + 'px'
-      div.style.top = y - win.innerWidth + 'px'
+      div.style.width = '500px'
+      div.style.height = '500px'
+      div.style.left = x - 250 + 'px'
+      div.style.top = y - 250 + 'px'
       div.style.opacity = '0'
 
       setTimeout(function () {
         el.removeChild(div)
       }, 600)
-    }, 0)
+    }, 4)
   }
 
   // 处理点击效果

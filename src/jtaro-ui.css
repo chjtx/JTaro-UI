@@ -37,7 +37,7 @@ div, a, button, input, textarea { outline: none; -webkit-tap-highlight-color: tr
     -moz-osx-font-smoothing: grayscale;
 }
 
-.j-icon-menu:before { content: "\e60b"; }
+.j-icon-menu:before { content: "\e601"; }
 
 .j-icon-github:before { content: "\e6c5"; }
 

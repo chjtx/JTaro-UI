@@ -3,27 +3,30 @@ this {
   height: 44px;
   line-height: 44px;
   text-align: center;
+  position: relative;
+  top: 0;
+  left: 0;
 }
 .appbar-left {
-  width: 20%;
-  float: left;
-}
-.appbar-center {
-  width: 60%;
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 100%;
+  padding-left: 10px;
 }
 .appbar-right {
-  width: 20%;
-  float: right;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  padding-right: 10px;
 }
 </style>
 <div class="j-bg-primary j-font-primary">
   <div class="appbar-left">
     <slot name="left"></slot>
   </div>
-  <div class="appbar-center">
-    <slot name="center"></slot>
-  </div>
+  <div>{{ title }}</div>
   <div class="appbar-right">
     <slot name="right"></slot>
   </div>

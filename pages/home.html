@@ -2,11 +2,19 @@
   .j-icon-menu {
     font-size: 24px;
     float: left;
+    display: block;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
   }
 </style>
 <div>
-  <j-appbar title="JTaro UI">
-    <j-button slot="left" type="text" class="j-icon-menu"></j-button>
+  <j-appbar title="JTaro UI" class="j-click-button">
+    <j-button slot="left" type="text" round="1" width="44" height="44" class="j-icon-menu"></j-button>
   </j-appbar>
-  <j-button :action="gotoHaha" width="100" height="50" type="text">按钮</j-button>
+  <j-button :action="gotoHaha" width="42" height="42" :type="type">按钮</j-button>
+  <j-button :action="disabledPrev" width="142" height="42" type="red" style="margin-top:10px">按钮</j-button>
+  <j-button width="142" height="42" type="green" style="margin-top:10px">按钮</j-button>
+  <j-button width="142" height="42" type="blue" style="margin-top:10px">按钮<span class="j-icon-github"></span></j-button>
+  <j-button width="42" height="42" type="yellow" style="margin-top:10px;border-radius:50%" round="1">按钮</j-button>
+  <j-button width="142" height="42" type="disabled" style="margin-top:10px">按钮</j-button>
 </div>

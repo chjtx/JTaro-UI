@@ -3,7 +3,7 @@ import html from './button.html'
 
 (function (v) {
   v.component('j-button', {
-    props: ['action', 'type', 'width', 'height'],
+    props: ['action', 'type', 'width', 'height', 'round'],
     template: html,
     computed: {
       classObject: function () {
@@ -12,11 +12,18 @@ import html from './button.html'
           'j-text-primary': !this.type,
           'j-bg-primary': this.type === 'theme',
           'j-font-primary': this.type === 'theme',
-          'j-button-text': this.type === 'text'
+          'j-button-text': this.type === 'text',
+          'j-click-button': !this.round && this.type !== 'disabled',
+          'j-click-round-button': this.round && this.type !== 'disabled',
+          'j-button-red': this.type === 'red',
+          'j-button-green': this.type === 'green',
+          'j-button-blue': this.type === 'blue',
+          'j-button-yellow': this.type === 'yellow',
+          'j-button-disabled': this.type === 'disabled'
         }
       },
       a: function () {
-        return this.action || function () { return false }
+        return this.type === 'disabled' ? function () { return false } : (this.action || function () { return false })
       },
       w: function () {
         return this.width ? Number(this.width) + 'px' : 'auto'

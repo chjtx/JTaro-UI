@@ -7,12 +7,41 @@ this {
   border-radius: 2px;
   border-width: 1px;
   border-style: solid;
+  position: relative;
+  top: 0;
+  left: 0;
+  overflow: hidden;
 }
 this.j-button-text {
-  border-color: transparent!important;
-  background: transparent!important;
+  border-color: transparent;
+  background: transparent;
+}
+this.j-button-red {
+  background: #f44336;
+  border-color: #f44336;
+  color: #fff;
+}
+this.j-button-green {
+  background: #4caf50;
+  border-color: #4caf50;
+  color: #fff;
+}
+this.j-button-blue {
+  background: #2196f3;
+  border-color: #2196f3;
+  color: #fff;
+}
+this.j-button-yellow {
+  background: #ffc107;
+  border-color: #ffc107;
+  color: #fff;
+}
+this.j-button-disabled {
+  background: #f7f7f7;
+  border-color: #d7dde4;
+  color: #c3cbd6;
 }
 </style>
-<div @click="a" class="j-click-button" v-bind:style="{ width: w, height: h, lineHeight: l }" v-bind:class="classObject">
+<div @click="a" v-bind:style="{ width: w, height: h, lineHeight: l }" v-bind:class="classObject">
   <slot></slot>
 </div>

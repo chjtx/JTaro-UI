@@ -6,11 +6,16 @@
     -webkit-border-radius: 100%;
     border-radius: 100%;
   }
+  .abc {
+    width: 100px;
+    height: 100px;
+    background: #fff;
+  }
 </style>
 <div>
   <j-appbar title="JTaro UI">
     <j-button
-      :action="showSideBar"
+      :action="toggleSideBar"
       slot="left"
       type="text"
       round="1"
@@ -27,4 +32,7 @@
     <j-button width="42" height="42" type="yellow" style="margin-top:10px;border-radius:50%" round="1">按钮</j-button>
     <j-button width="142" height="42" type="disabled" style="margin-top:10px">按钮</j-button>
   </j-body>
+  <j-mask :show="show" :action="toggleSideBar">
+    <div class="abc">123</div>
+  </j-mask>
 </div>

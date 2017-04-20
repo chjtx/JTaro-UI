@@ -2,19 +2,31 @@
 import html from './mask.html'
 
 (function (v) {
-  var m = document.getElementById('__jtaro_ui_mask__')
-  if (!m) {
-    m = document.createElement('div')
-    m.id = '__jtaro_ui_mask__'
-    document.body.appendChild(m)
-  }
-
-  new Vue({
-    el: m,
-    template: html
-  })
   v.component('j-mask', {
-    props: ['title'],
-    template: html
+    props: ['show', 'action'],
+    template: html,
+    watch: {
+      show: function () {
+        var _this = this
+        if (this.show) {
+          this.$el.style.display = 'block'
+          setTimeout(function () {
+            _this.$el.style.opacity = 1
+          }, 4)
+        } else {
+          this.$el.style.opacity = 0
+          setTimeout(function () {
+            _this.$el.style.display = 'none'
+          }, 200)
+        }
+      }
+    },
+    mounted: function () {
+      if (this.show) {
+        this.$el.style.display = 'block'
+      } else {
+        this.$el.style.display = 'none'
+      }
+    }
   })
 })(Vue)

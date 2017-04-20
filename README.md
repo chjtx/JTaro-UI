@@ -57,3 +57,20 @@
 | :options | null | 提供给JRoll创建实例时使用的选项 |
 | outer-bg |  | 外围div的背景色，即JRoll的wrapper元素的背景色 |
 | inner-bg |  | 内围div的背景色，即JRoll的scroller元素的背景色 |
+
+### j-mask
+
+遮罩组件
+
+```html
+<j-mask :show="1" :action="bindMethodByYourself">
+  <div>自定义内容</div>
+</j-mask>
+```
+
+属性
+
+| 名称 | 默认值 | 说明 |
+| :--: | :--: | :--- |
+| :action | null | 点击遮罩触发的动作 |
+| :show |  | 是否显示 |

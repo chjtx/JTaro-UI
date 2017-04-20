@@ -2,6 +2,7 @@
 import '../components/appbar.js'
 import '../components/button.js'
 import '../components/body.js'
+import '../components/mask.js'
 import html from './home.html'
 
 export default {
@@ -9,14 +10,15 @@ export default {
   data: function () {
     return {
       type: 'text',
+      show: 0,
       jrollOptions: {
         scrollBarY: true
       }
     }
   },
   methods: {
-    showSideBar: function () {
-
+    toggleSideBar: function () {
+      this.show = !this.show
     },
     gotoHaha: function () {
       this.go('pages/haha')

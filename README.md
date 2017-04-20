@@ -39,3 +39,21 @@
 | round | | 是否为圆形按钮，对应`.j-click-round-button` |
 
 以上属性都可以使用`v-bind`动态修改
+
+### j-body
+
+自动提供JRoll滑动，默认top:44px，可自行通过style修改
+
+```html
+<j-body :options="jrollOptions">
+  <div>文章内容</div>
+</j-body>
+```
+
+属性
+
+| 名称 | 默认值 | 说明 |
+| :--: | :--: | :--- |
+| :options | null | 提供给JRoll创建实例时使用的选项 |
+| outer-bg |  | 外围div的背景色，即JRoll的wrapper元素的背景色 |
+| inner-bg |  | 内围div的背景色，即JRoll的scroller元素的背景色 |

@@ -1,16 +1,23 @@
 // import '../base/jtaro-ui.css'
 import '../components/appbar.js'
 import '../components/button.js'
+import '../components/body.js'
 import html from './home.html'
 
 export default {
   template: html,
   data: function () {
     return {
-      type: 'text'
+      type: 'text',
+      jrollOptions: {
+        scrollBarY: true
+      }
     }
   },
   methods: {
+    showSideBar: function () {
+
+    },
     gotoHaha: function () {
       this.go('pages/haha')
     },

@@ -48,7 +48,7 @@
       setTimeout(function () {
         el.removeChild(div)
       }, 400)
-    }, 4)
+    }, 50)
   }
 
   // 处理点击效果

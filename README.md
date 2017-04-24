@@ -63,7 +63,7 @@
 遮罩组件
 
 ```html
-<j-mask :show="1" :action="bindMethodByYourself">
+<j-mask :show="show" :action="bindMethodByYourself">
   <div>自定义内容</div>
 </j-mask>
 ```
@@ -74,3 +74,21 @@
 | :--: | :--: | :--- |
 | :action | null | 点击遮罩触发的动作 |
 | :show |  | 是否显示 |
+
+### j-sidebar
+
+```html
+<j-sidebar :show="show" :action="toggleSideBar" side="right">
+  <div>内容</div>
+</j-sidebar>
+```
+
+属性
+
+| 名称 | 默认值 | 说明 |
+| :--: | :--: | :--- |
+| :action | null | 点击遮罩触发的动作 |
+| :show |  | 是否显示 |
+| side | left | 在哪边显示，左或右，可选`left`、`right` |
+| width | 80% | 宽度 |
+| bg | #FFF | 背景色 |

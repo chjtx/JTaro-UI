@@ -1,15 +1,18 @@
 <style>
-  .j-icon-menu {
+  .show-menu {
     font-size: 24px;
-    float: left;
-    display: block;
     -webkit-border-radius: 100%;
     border-radius: 100%;
   }
-  .abc {
-    width: 100px;
-    height: 100px;
-    background: #fff;
+  .home-body {
+    text-align: center;
+  }
+  .home-icon {
+    font-size: 30px;
+  }
+  .home-body .j-col-4 {
+    padding: 15px 0;
+    font-size: 14px;
   }
 </style>
 <div>
@@ -21,18 +24,21 @@
       round="1"
       width="44"
       height="44"
-      class="j-icon-menu"
+      class="j-icon-menu show-menu"
     ></j-button>
   </j-appbar>
-  <j-body :options="jrollOptions" outer-bg="#efefef" inner-bg="rgba(255, 0, 0, .1)">
-    <j-button :action="gotoHaha" width="42" height="42" :type="type">按钮</j-button>
-    <j-button :action="disabledPrev" width="142" height="42" type="red" style="margin-top:10px">按钮</j-button>
-    <j-button width="142" height="42" type="green" style="margin-top:10px">按钮</j-button>
-    <j-button width="142" height="42" type="blue" style="margin-top:10px">按钮<span class="j-icon-github"></span></j-button>
-    <j-button width="42" height="42" type="yellow" style="margin-top:10px;border-radius:50%" round="1">按钮</j-button>
-    <j-button width="142" height="42" type="disabled" style="margin-top:10px">按钮</j-button>
+  <j-body class="home-body">
+    <div class="j-row-12">
+      <div v-for="m in menus" class="j-col-4 j-click-round-button" @click="gotoSubPage(m.url)">
+        <p><span class="home-icon j-color-primary" :class="'j-icon-' + m.icon"></span></p>
+        <p>{{ m.text }}</p>
+      </div>
+    </div>
   </j-body>
-  <j-mask :show="show" :action="toggleSideBar">
-    <div class="abc">123</div>
-  </j-mask>
+  <j-sidebar :show="show" :action="toggleSideBar">
+    <j-appbar title="关于 JTaro UI"></j-appbar>
+    <j-body>
+      Hello JTaro UI
+    </j-body>
+  </j-sidebar>
 </div>

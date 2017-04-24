@@ -26,13 +26,13 @@ import html from './button.html'
         return this.type === 'disabled' ? function () { return false } : (this.action || function () { return false })
       },
       w: function () {
-        return this.width ? Number(this.width) + 'px' : 'auto'
+        return isNaN(Number(this.width)) ? this.width : Number(this.width) + 'px'
       },
       h: function () {
-        return this.height ? Number(this.height) + 'px' : '36px'
+        return isNaN(Number(this.height)) ? this.width : Number(this.height) + 'px'
       },
       l: function () {
-        return this.height ? Number(this.height) - 2 + 'px' : '34px'
+        return this.height ? Number(this.height) - 2 + 'px' : null
       }
     }
   })

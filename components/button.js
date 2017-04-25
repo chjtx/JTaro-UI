@@ -3,7 +3,7 @@ import html from './button.html'
 
 (function (v) {
   v.component('j-button', {
-    props: ['action', 'type', 'width', 'height', 'round'],
+    props: ['type', 'width', 'height', 'round'],
     template: html,
     computed: {
       classObject: function () {
@@ -22,9 +22,6 @@ import html from './button.html'
           'j-button-disabled': this.type === 'disabled'
         }
       },
-      a: function () {
-        return this.type === 'disabled' ? function () { return false } : (this.action || function () { return false })
-      },
       w: function () {
         return isNaN(Number(this.width)) ? this.width : Number(this.width) + 'px'
       },
@@ -33,6 +30,11 @@ import html from './button.html'
       },
       l: function () {
         return this.height ? Number(this.height) - 2 + 'px' : null
+      }
+    },
+    methods: {
+      a: function () {
+        if (this.type !== 'disabled') this.$emit('action')
       }
     }
   })

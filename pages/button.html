@@ -14,7 +14,7 @@
 <div>
   <j-appbar title="按钮">
     <j-button
-      :action="goback"
+      @action="goback"
       slot="left"
       type="text"
       round="1"
@@ -24,12 +24,6 @@
     ></j-button>
   </j-appbar>
   <j-body class="button-body">
-    <!--<j-button :action="gotoHaha" width="42" height="42" :type="type">按钮</j-button>
-    <j-button :action="disabledPrev" width="142" height="42" type="red" style="margin-top:10px">按钮</j-button>
-    <j-button width="142" height="42" type="green" style="margin-top:10px">按钮</j-button>
-    <j-button width="142" height="42" type="blue" style="margin-top:10px">按钮<span class="j-icon-github"></span></j-button>
-    <j-button width="42" height="42" type="yellow" style="margin-top:10px;border-radius:50%" round="1">按钮</j-button>
-    <j-button width="142" height="42" type="disabled" style="margin-top:10px">按钮</j-button>-->
     <j-button width="100%" type="text" style="margin-top:10px">文本按钮</j-button>
     <j-button width="100%" style="margin-top:10px">普通按钮</j-button>
     <j-button width="100%" type="theme" style="margin-top:10px">主题色按钮</j-button>

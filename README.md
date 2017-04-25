@@ -25,14 +25,14 @@
 ### j-button
 
 ```html
-<j-button :action="bindMethodByYourself" width="42" height="42" type="theme" round="1">按钮</j-button>
+<j-button @action="bindMethodByYourself" width="42" height="42" type="theme" round="1">按钮</j-button>
 ```
 
 属性
 
 | 名称 | 默认值 | 说明 |
 | :--: | :--: | :--- |
-| :action | | 父作用域methods里的一个方法，点击该按钮时触发 |
+| @action | | 父作用域methods里的一个方法，点击该按钮时触发 |
 | width | auto | 按钮宽度 |
 | height | 36px | 按钮高度 |
 | type | | 按钮类型，可选:<br>1、默认普通类型<br>2、`text` 文本类型<br>3、`theme` 与主题一致<br>4、`red` 红<br>5、`green` 绿<br>6、`blue` 蓝<br>7、`yellow` 黄<br>8、`disabled` 不可用 |
@@ -63,7 +63,7 @@
 遮罩组件
 
 ```html
-<j-mask :show="show" :action="bindMethodByYourself">
+<j-mask :show="show" @action="bindMethodByYourself">
   <div>自定义内容</div>
 </j-mask>
 ```
@@ -72,13 +72,13 @@
 
 | 名称 | 默认值 | 说明 |
 | :--: | :--: | :--- |
-| :action | null | 点击遮罩触发的动作 |
+| @action | null | 点击遮罩触发的动作 |
 | :show |  | 是否显示 |
 
 ### j-sidebar
 
 ```html
-<j-sidebar :show="show" :action="toggleSideBar" side="right">
+<j-sidebar :show="show" @action="toggleSideBar" side="right">
   <div>内容</div>
 </j-sidebar>
 ```
@@ -87,7 +87,7 @@
 
 | 名称 | 默认值 | 说明 |
 | :--: | :--: | :--- |
-| :action | null | 点击遮罩触发的动作 |
+| @action | null | 点击遮罩触发的动作 |
 | :show |  | 是否显示 |
 | side | left | 在哪边显示，左或右，可选`left`、`right` |
 | width | 80% | 宽度 |

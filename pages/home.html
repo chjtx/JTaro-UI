@@ -5,20 +5,17 @@
     border-radius: 100%;
   }
   .home-body {
-    text-align: center;
+    padding: 0 20px 20px;
   }
-  .home-icon {
-    font-size: 30px;
-  }
-  .home-body .j-col-4 {
-    padding: 15px 0;
+  .home-menu-title {
     font-size: 14px;
+    padding: 20px 0 10px 0;
   }
 </style>
 <div>
   <j-appbar title="JTaro UI">
     <j-button
-      :action="toggleSideBar"
+      @action="toggleSideBar"
       slot="left"
       type="text"
       round="1"
@@ -28,14 +25,15 @@
     ></j-button>
   </j-appbar>
   <j-body class="home-body">
-    <div class="j-row-12">
-      <div v-for="m in menus" class="j-col-4 j-click-round-button" @click="gotoSubPage(m.url)">
-        <p><span class="home-icon j-color-primary" :class="'j-icon-' + m.icon"></span></p>
-        <p>{{ m.text }}</p>
-      </div>
-    </div>
+    <template v-for="m in menus">
+      <div class="home-menu-title j-color-primary">{{m.type}}</div>
+      <j-button v-for="c in m.children"
+        :type="c.url ? '' : 'disabled'"
+        @action="gotoSubPage(c.url)"
+        width="100%">{{ c.name }}</j-button>
+    </template>
   </j-body>
-  <j-sidebar :show="show" :action="toggleSideBar">
+  <j-sidebar :show="show" @action="toggleSideBar">
     <j-appbar title="关于 JTaro UI"></j-appbar>
     <j-body>
       Hello JTaro UI

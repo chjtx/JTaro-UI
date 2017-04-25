@@ -3,7 +3,7 @@ import html from './mask.html'
 
 (function (v) {
   v.component('j-mask', {
-    props: ['show', 'action'],
+    props: ['show'],
     template: html,
     watch: {
       show: function () {
@@ -19,6 +19,11 @@ import html from './mask.html'
             _this.$el.style.display = 'none'
           }, 200)
         }
+      }
+    },
+    methods: {
+      action: function () {
+        this.$emit('action')
       }
     },
     mounted: function () {

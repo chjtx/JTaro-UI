@@ -4,7 +4,7 @@ import html from './sidebar.html'
 
 (function (v) {
   v.component('j-sidebar', {
-    props: ['show', 'action', 'side', 'width', 'bg'],
+    props: ['show', 'side', 'width', 'bg'],
     template: html,
     computed: {
       styleObject: function () {
@@ -30,6 +30,11 @@ import html from './sidebar.html'
             _this.$el.style.display = 'none'
           }, 300)
         }
+      }
+    },
+    methods: {
+      action: function () {
+        this.$emit('action')
       }
     },
     mounted: function () {

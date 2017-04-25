@@ -890,9 +890,9 @@ jtaro-module@^0.2.2:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/jtaro-module/-/jtaro-module-0.2.2.tgz#d70b23bf9ab1292275b9a66de9ba81290905329c"
 
-jtaro@^0.4.8:
-  version "0.4.8"
-  resolved "https://registry.yarnpkg.com/jtaro/-/jtaro-0.4.8.tgz#1b3597e25f1cf2ec61804818308b32ed3500f9ac"
+jtaro@^0.4.9:
+  version "0.4.9"
+  resolved "https://registry.yarnpkg.com/jtaro/-/jtaro-0.4.9.tgz#0441220797d82e77a7fdeb9971e623c80ba4dc6b"
   dependencies:
     jroll "^2.4.5"
     vue "^2.2.1"

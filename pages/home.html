@@ -25,13 +25,14 @@
     ></j-button>
   </j-appbar>
   <j-body class="home-body">
-    <template v-for="m in menus">
+    <div v-for="m in menus" :key="encodeURIComponent(m.type).replace(/%/g, '')">
       <div class="home-menu-title j-color-primary">{{m.type}}</div>
       <j-button v-for="c in m.children"
         :type="c.url ? '' : 'disabled'"
         @action="gotoSubPage(c.url)"
+        :key="encodeURIComponent(m.name).replace(/%/g, '')"
         width="100%">{{ c.name }}</j-button>
-    </template>
+    </div>
   </j-body>
   <j-sidebar :show="show" @action="toggleSideBar">
     <j-appbar title="关于 JTaro UI"></j-appbar>

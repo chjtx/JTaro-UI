@@ -847,6 +847,10 @@ jroll@^2.4.5:
   version "2.4.7"
   resolved "https://registry.yarnpkg.com/jroll/-/jroll-2.4.7.tgz#54494824887433a3e69c23270ed28bbb612a60e7"
 
+jroll@^2.4.9:
+  version "2.4.9"
+  resolved "https://registry.yarnpkg.com/jroll/-/jroll-2.4.9.tgz#5b6b95caf96da2b897c80bca929426faec89ead5"
+
 js-tokens@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-3.0.1.tgz#08e9f132484a2c45a30907e9dc4d5567b7f114d7"

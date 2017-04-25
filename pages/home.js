@@ -43,6 +43,9 @@ export default {
       }, {
         type: '表单组件',
         children: [{
+          name: '输入框（Input）',
+          url: ''
+        }, {
           name: '开关（Switch）',
           url: ''
         }, {
@@ -54,11 +57,32 @@ export default {
         }, {
           name: '复选（Checkbox）',
           url: ''
+        }, {
+          name: '加减器（Number Box）',
+          url: ''
+        }, {
+          name: '捡选器（Picker）',
+          url: ''
+        }, {
+          name: '范围滑块（Range）',
+          url: ''
+        }, {
+          name: '搜索框（Search Box）',
+          url: ''
+        }, {
+          name: '操作表（Action Sheet）',
+          url: ''
+        }, {
+          name: '日期选择器（Datetime）',
+          url: ''
         }]
       }, {
-        type: '高级组件',
+        type: '其它组件',
         children: [{
           name: '下拉刷新（Pulldown Refresh）',
+          url: ''
+        }, {
+          name: '无限加载（Infinite）',
           url: ''
         }, {
           name: '图片轮播（Swiper）',
@@ -67,7 +91,25 @@ export default {
           name: '省市区联动菜单（City Picker）',
           url: ''
         }, {
+          name: '日历（Calendar）',
+          url: ''
+        }, {
           name: '字母索引（Letter Index）',
+          url: ''
+        }, {
+          name: '图片浏览器（Photo Browser）',
+          url: ''
+        }, {
+          name: '通知（Notification）',
+          url: ''
+        }, {
+          name: '侧滑菜单（SideBar）',
+          url: ''
+        }, {
+          name: 'TAB选项卡（Tab）',
+          url: ''
+        }, {
+          name: '表头固定的表格（Table Viewer）',
           url: ''
         }]
       }]

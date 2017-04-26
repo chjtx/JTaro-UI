@@ -1,0 +1,19 @@
+<style>
+  .sidebar-body {
+    padding: 15px;
+  }
+</style>
+<div>
+  <DemoHeader title="侧栏" />
+
+  <j-body class="sidebar-body">
+    <j-button type="theme" width="100" @action="toggleSideBar">右侧弹出</j-button>
+  </j-body>
+
+  <j-sidebar :show="show" @action="toggleSideBar" side="right">
+    <j-appbar title="关于 JTaro UI"></j-appbar>
+    <j-body>
+      <div style="padding-top:100px;text-align:center;">Hello JTaro UI</div>
+    </j-body>
+  </j-sidebar>
+</div>

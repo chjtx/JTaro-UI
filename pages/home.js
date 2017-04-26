@@ -104,7 +104,7 @@ export default {
           url: ''
         }, {
           name: '侧滑菜单（SideBar）',
-          url: ''
+          url: 'pages/sidebar'
         }, {
           name: 'TAB选项卡（Tab）',
           url: ''

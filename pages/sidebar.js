@@ -1,6 +1,6 @@
-import '../components/dialog.js'
+import '../components/sidebar.js'
 import header from './parts/sub-page-header.js'
-import html from './dialog.html'
+import html from './sidebar.html'
 
 export default {
   template: html,
@@ -17,13 +17,8 @@ export default {
     goback: function () {
       window.history.back()
     },
-    showDialog: function () {
-      this.show = 1
-    },
-    clickDialog: function (index) {
-      if (index === -1 || index === 0) {
-        this.show = 0
-      }
+    toggleSideBar: function () {
+      this.show = !this.show
     }
   }
 }

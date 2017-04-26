@@ -1,9 +1,4 @@
 <style>
-  .show-menu {
-    font-size: 24px;
-    -webkit-border-radius: 100%;
-    border-radius: 100%;
-  }
   .j-click-button {
     width: 100%
   }
@@ -12,17 +7,8 @@
   }
 </style>
 <div>
-  <j-appbar title="按钮">
-    <j-button
-      @action="goback"
-      slot="left"
-      type="text"
-      round="1"
-      width="44"
-      height="44"
-      class="j-icon-left show-menu"
-    ></j-button>
-  </j-appbar>
+  <DemoHeader title="按钮" />
+
   <j-body class="button-body">
     <j-button width="100%" type="text" style="margin-top:10px">文本按钮</j-button>
     <j-button width="100%" style="margin-top:10px">普通按钮</j-button>

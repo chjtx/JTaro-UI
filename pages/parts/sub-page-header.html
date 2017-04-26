@@ -1,0 +1,18 @@
+<style>
+  .show-menu {
+    font-size: 24px;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+  }
+</style>
+<div is="j-appbar" :title="title">
+  <j-button
+    @action="goback"
+    slot="left"
+    type="text"
+    round="1"
+    width="44"
+    height="44"
+    class="j-icon-left show-menu"
+  ></j-button>
+</div>

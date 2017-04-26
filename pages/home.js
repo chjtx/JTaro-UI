@@ -31,8 +31,8 @@ export default {
           name: '按钮（Button）',
           url: 'pages/button'
         }, {
-          name: '弹窗（Alert）',
-          url: ''
+          name: '弹窗（Dialog）',
+          url: 'pages/dialog'
         }, {
           name: '提示（Toast）',
           url: ''

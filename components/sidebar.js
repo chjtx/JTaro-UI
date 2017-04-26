@@ -19,13 +19,14 @@ import html from './sidebar.html'
     watch: {
       show: function () {
         var _this = this
+        var sub = _this.$el.querySelector('.j-sidebar')
         if (this.show) {
           this.$el.style.display = 'block'
           setTimeout(function () {
-            _this.$el.querySelector('.j-sidebar').style.transform = 'translateX(0px)'
+            sub.style.transform = 'translateX(0px)'
           }, 4)
         } else {
-          _this.$el.querySelector('.j-sidebar').style.transform = 'translateX(' + (this.side === 'right' ? '' : '-') + '100%)'
+          sub.style.transform = 'translateX(' + (this.side === 'right' ? '' : '-') + '100%)'
           setTimeout(function () {
             _this.$el.style.display = 'none'
           }, 300)
@@ -38,12 +39,13 @@ import html from './sidebar.html'
       }
     },
     mounted: function () {
+      var sub = this.$el.querySelector('.j-sidebar')
       if (this.show) {
         this.$el.style.display = 'block'
-        this.$el.querySelector('.j-sidebar').style.transform = 'translateX(0px)'
+        sub.style.transform = 'translateX(0px)'
       } else {
         this.$el.style.display = 'none'
-        this.$el.querySelector('.j-sidebar').style.transform = 'translateX(' + (this.side === 'right' ? '' : '-') + '100%)'
+        sub.style.transform = 'translateX(' + (this.side === 'right' ? '' : '-') + '100%)'
       }
     }
   })

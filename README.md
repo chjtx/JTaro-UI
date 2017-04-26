@@ -92,3 +92,20 @@
 | side | left | 在哪边显示，左或右，可选`left`、`right` |
 | width | 80% | 宽度 |
 | bg | #FFF | 背景色 |
+
+### j-dialog
+
+```html
+<j-dialog :show="show" @action="clickDialog" :buttons="buttons">
+  <div slot="title">弹窗标题</div>
+  <div slot="content">对话框内容对话框内容对话框内容对话框内容对话框内容</div>
+</j-dialog>
+```
+
+属性
+
+| 名称 | 默认值 | 说明 |
+| :--: | :--: | :--- |
+| @action | null | 点击按钮或遮罩触发的动作，按钮的索引值（从0开始）传进该动作方法，如果点击的是遮罩，则为`-1` |
+| :show |  | 是否显示 |
+| :buttons | [] | 按钮，最多允许三个，例：`['取消', '确定']` |

@@ -1,0 +1,57 @@
+<style>
+this {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: none;
+}
+.j-dialog {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 75%;
+  border-radius: 2px;
+  transform: translate(-50%, -1000px);
+  background: #fff;
+  -webkit-box-shadow: 0px 6px 26px rgba(0,0,0,.3);
+  box-shadow: 0px 6px 26px rgba(0,0,0,.3);
+  -webkit-transition: transform 200ms;
+  transition: transform 200ms;
+}
+.j-dialog-title {
+  padding: 10px;
+  text-align: center;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+.j-dialog-content {
+  padding: 15px;
+}
+.j-dialog-btns {
+  padding: 0 6px;
+}
+</style>
+<div>
+  <j-mask :show="show" @action="action(-1)"></j-mask>
+  <div class="j-dialog">
+    <div class="j-dialog-title j-bg-primary j-font-primary">
+      <slot name="title"></slot>
+    </div>
+    <div class="j-dialog-content">
+      <slot name="content"></slot>
+    </div>
+    <div class="j-dialog-btns">
+      <j-button
+        v-for="(b, i) in btns"
+        :key="i"
+        type="text"
+        height="42"
+        @action="action(i)"
+        class="j-color-primary"
+        :style="styleObject(i)">{{ b }}</j-button>
+    </div>
+  </div>
+</div>

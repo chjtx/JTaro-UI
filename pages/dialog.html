@@ -1,0 +1,32 @@
+<style>
+  .show-menu {
+    font-size: 24px;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+  }
+  .dialog-body {
+    padding: 15px;
+  }
+</style>
+<div>
+  <j-appbar title="对话框">
+    <j-button
+      @action="goback"
+      slot="left"
+      type="text"
+      round="1"
+      width="44"
+      height="44"
+      class="j-icon-left show-menu"
+    ></j-button>
+  </j-appbar>
+
+  <j-body class="dialog-body">
+    <j-button type="theme" width="100" @action="showDialog">弹窗</j-button>
+  </j-body>
+  
+  <j-dialog :show="show" @action="clickDialog" :buttons="buttons">
+    <div slot="title">弹窗标题</div>
+    <div slot="content">对话框内容对话框内容对话框内容对话框内容对话框内容</div>
+  </j-dialog>
+</div>

@@ -5,10 +5,5 @@ export default {
   template: html,
   components: {
     'DemoHeader': header
-  },
-  methods: {
-    goback: function () {
-      window.history.back()
-    }
   }
 }

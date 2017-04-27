@@ -14,9 +14,6 @@ export default {
     }
   },
   methods: {
-    goback: function () {
-      window.history.back()
-    },
     showDialog: function () {
       this.show = 1
     },

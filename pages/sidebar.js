@@ -14,9 +14,6 @@ export default {
     }
   },
   methods: {
-    goback: function () {
-      window.history.back()
-    },
     toggleSideBar: function () {
       this.show = !this.show
     }

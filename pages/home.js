@@ -35,7 +35,7 @@ export default {
           url: 'pages/dialog'
         }, {
           name: '提示（Toast）',
-          url: ''
+          url: 'pages/toast'
         }, {
           name: '加载器（Loader）',
           url: ''

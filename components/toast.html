@@ -1,0 +1,25 @@
+<style>
+  this {
+    position: fixed;
+    bottom: -1px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    color: #fff;
+    background: rgba(0, 0, 0, .7);
+    border-radius: 2px;
+    font-size: 16px;
+    padding: 6px 12px;
+    max-width: 80%;
+    -webkit-transition: bottom 100ms linear, opacity 1000ms;
+    transition: bottom 100ms linear, opacity 1000ms;
+    -webkit-box-shadow: 0px 6px 26px rgba(0,0,0,.3);
+    box-shadow: 0px 6px 26px rgba(0,0,0,.3);
+  }
+  this.j-toast-show {
+    bottom: 20%;
+  }
+  this.j-toast-hide {
+    opacity: 0;
+  }
+</style>
+<div id="{{id}}">{{message}}</div>

@@ -9,7 +9,13 @@ export default {
   },
   methods: {
     showToast: function () {
-      new Toast('默认2秒后自动消失')
+      new Toast('默认2秒后消失')
+    },
+    showToastForever: function () {
+      this.toast = new Toast('不会自动消失', -1)
+    },
+    destroyToast: function () {
+      this.toast.destroy()
     }
   }
 }

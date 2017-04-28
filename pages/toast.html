@@ -7,6 +7,8 @@
   <DemoHeader title="提示" />
 
   <j-body class="toast-body">
-    <j-button width="100" type="theme" @action="showToast">弹出提示</j-button>
+    <j-button width="100%" @action="showToast">弹出提示</j-button>
+    <j-button width="100%" @action="showToastForever">不自动消失</j-button>
+    <j-button width="100%" @action="destroyToast">手动关闭</j-button>
   </j-body>
 </div>

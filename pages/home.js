@@ -38,7 +38,7 @@ export default {
           url: 'pages/toast'
         }, {
           name: '加载器（Loader）',
-          url: ''
+          url: 'pages/loader'
         }]
       }, {
         type: '表单组件',

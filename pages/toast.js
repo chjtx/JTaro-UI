@@ -15,7 +15,7 @@ export default {
       this.toast = new Toast('不会自动消失', -1)
     },
     destroyToast: function () {
-      this.toast.destroy()
+      if (this.toast) this.toast.destroy()
     }
   }
 }

@@ -1,6 +1,10 @@
 # JTaro UI
 
-## 颜色
+## 主题颜色
+
+参考 [material design color](https://material.io/guidelines/style/color.html#color-color-palette)
+
+复制`src/jtaro-ui-theme-default.css`，将里面的主题颜色修改成自己的颜色
 
 ## 字体图标
 
@@ -113,6 +117,8 @@
 ### Toast
 
 ```js
+import Toast from './components/toast.js'
+
 // 默认2000ms后自动消失
 new Toast('默认2秒后消失')
 
@@ -124,4 +130,31 @@ var toast = new Toast('不会自动消失', -1)
 
 // 调用destroy方法手动消灭它
 toast.destroy()
+```
+
+### Loader
+
+```js
+import Loader from './components/loader.js'
+
+// 默认用法：
+var loader = new Loader();
+
+//可选参数（以下为默认值）
+var loader = new Loader({
+  "autoShow" : true,  //马上显示
+  "target" : document.body, //在哪个dom里显示
+  "text" : '载入中，请稍候...',  //显示的文字
+  "cancel" : null,  //关闭按钮，为null时不显示，为function时显示，点击关闭即执行function
+  "color" : 'rgba(255, 255, 255, 1)', //文本颜色
+  "boxBg" : 'rgba(0, 0, 0, .75)', //loading框颜色
+  "wrapBg": 'rgba(0, 0, 0, .2)',  //背景颜色
+  "zIndex": 9999  //z-index属性
+});
+
+/* 提供三个方法
+1、显示 loader.show();
+2、隐藏 loader.hide();
+3、销毁 loader.destroy();
+*/
 ```

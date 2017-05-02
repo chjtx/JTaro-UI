@@ -1,0 +1,80 @@
+/* 字体图标 */
+.j-icon-menu:before { content: "\e601"; }
+
+.j-icon-github:before { content: "\e6c5"; }
+
+.j-icon-right:before { content: "\e620"; }
+
+.j-icon-up:before { content: "\e63c"; }
+
+.j-icon-down:before { content: "\e63d"; }
+
+.j-icon-left:before { content: "\e63e"; }
+
+
+/* color */
+/* 主题背景颜色 参考 material design color */
+.j-bg-weaken {
+  background: #80CBC4; /* 200 */
+}
+.j-bg-primary {
+  background: #009688; /* 500 */
+}
+.j-bg-deepen {
+  background: #00695C; /* 800 */
+}
+
+/* 一般背景颜色 */
+.j-bg-gray {
+  background: #EEEEEE;
+}
+.j-bg-dark-gray {
+  background: #BDBDBD;
+}
+
+/* 与背景色相辅的字体颜色 */
+.j-font-primary {
+  color: #fff;
+}
+.j-font-second {
+  color: #E0F2F1; /* 50 */
+}
+
+/* 主题文本颜色 */
+.j-color-weaken {
+  color: #80CBC4;
+}
+.j-color-primary {
+  color: #009688;
+}
+.j-color-deepen {
+  color: #00695C;
+}
+
+/* 一般文本颜色 */
+.j-text-weakest {
+  color: #E0E0E0;
+}
+.j-text-weaken {
+  color: #9E9E9E;
+}
+.j-text-second {
+  color: #424242;
+}
+.j-text-primary {
+  color: #212121;
+}
+.j-text-deepen {
+  color: #000;
+}
+
+/* 边框颜色 */
+.j-border-weaken {
+  border-color: #80CBC4;
+}
+.j-border-primary {
+  border-color: #009688;
+}
+.j-border-deepen {
+  border-color: #00695C;
+}

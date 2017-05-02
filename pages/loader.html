@@ -2,11 +2,16 @@
   .loader-body {
     padding: 15px;
   }
+  #pages_loader_1 {
+    height: 100px;
+  }
 </style>
 <div>
   <DemoHeader title="加载器" />
 
   <j-body class="loader-body">
-    <j-button width="100" type="theme" @action="showLoader">开始加载</j-button>
+    <j-button width="100%" @action="showLoader">带关闭按钮的全屏遮罩</j-button>
+
+    <div id="pages_loader_1"></div>
   </j-body>
 </div>

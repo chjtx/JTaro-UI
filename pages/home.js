@@ -13,8 +13,8 @@ export default {
       menus: [{
         type: '辅佐类',
         children: [{
-          name: '颜色（Color）',
-          url: ''
+          name: '主题颜色（Theme Color）',
+          url: 'pages/theme'
         }, {
           name: '图标（Icon）',
           url: ''

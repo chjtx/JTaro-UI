@@ -1,14 +1,87 @@
 # JTaro UI
 
+为JTaro定做的UI库，依赖JRoll，但不依赖JTaro
+
+## 开始使用
+
+一个比较合理的`index.html`模板
+
+```html
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0">
+    <title>JTaro UI</title>
+    <link rel="stylesheet" href="./src/jtaro-ui.css">
+    <link rel="stylesheet" id="jtaro_ui_theme" href="./src/jtaro-ui-theme-default.css">
+    <script src="./node_modules/jtaro-module/src/client.js"></script>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script src="./node_modules/jroll/src/jroll.js"></script>
+    <script src="./src/jtaro-ui.js"></script>
+</head>
+<body>
+    <div id="jtaro_app"></div>
+    <script src="./node_modules/jtaro/dist/jtaro.js"></script>
+    <script>
+       Vue.use(JTaro, {
+           default: 'pages/home'
+       })
+    </script>
+</body>
+</html>
+```
+
+- 先引入基础样式文件`jtaro-ui.css`，再引入主题样式文件`jtaro-ui-theme-default.css`
+- `jtaro-ui.js`依赖JRoll，因此需要放在`jroll.js`后面
+
 ## 主题颜色
 
 参考 [material design color](https://material.io/guidelines/style/color.html#color-color-palette)
 
 复制`src/jtaro-ui-theme-default.css`，将里面的主题颜色修改成自己的颜色
 
+动态修改主题，只需要将主题样式的`link`的`href`修改为自己主题样式文件的路径
+
+```js
+document.getElementById('jtaro_ui_theme').href = './jtaro-ui-theme-yours.css'
+```
+
 ## 字体图标
 
+到[阿里巴巴矢量图标库](http://www.iconfont.cn/)下载图标
+
+修改`src/jtaro-ui-theme-default.css`里的字体图标内容，例：
+
+```css
+.j-icon-menu:before { content: "\e601"; }
+.j-icon-github:before { content: "\e6c5"; }
+```
+
+下载下来的字体文件必须命名为`iconfont`，共有四个文件`iconfont.eot`、`iconfont.svg`、`iconfont.ttf`、`iconfont.woff`，这四个文件都必须放在`src/jtaro-ui.css`相同目录里
+
 ## 栅格
+
+分12列和10列两类，`j-row-[10/12]`表示行，`j-col-[1-10/1-12]`表示列
+
+```html
+<!-- 10 列 -->
+<div class="j-row-10">
+  <div class="j-col-1"></div>
+  <div class="j-col-2"></div>
+  <div class="j-col-3"></div>
+  <div class="j-col-4"></div>
+</div>
+```
+
+```html
+<!-- 12 列 -->
+<div class="j-row-12">
+  <div class="j-col-3"></div>
+  <div class="j-col-4"></div>
+  <div class="j-col-5"></div>
+</div>
+```
 
 ## 点击涟漪效果
 

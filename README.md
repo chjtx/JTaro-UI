@@ -2,6 +2,12 @@
 
 为JTaro定做的UI库，依赖JRoll，但不依赖JTaro
 
+## 先睹为快
+
+<img width="160" height="160" src="http://www.chjtx.com/assets/images/jtaro-ui-qrcode.png">
+
+http://www.chjtx.com/JTaro-UI/build/
+
 ## 开始使用
 
 一个比较合理的`index.html`模板
@@ -86,6 +92,7 @@ document.getElementById('jtaro_ui_theme').href = './jtaro-ui-theme-yours.css'
 ## 点击涟漪效果
 
 添加`.j-click-button`样式类，普通效果，扩散点在点击位置
+
 添加`.j-click-round-button`样式类，圆形按钮效果，扩散点在元素中心
 
 ## 组件

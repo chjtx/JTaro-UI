@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "node ./node_modules/jtaro-module/src/server.js 3040 --config=../../../../jtaro.module.config.js"
+    "dev": "node ./node_modules/jtaro-module/src/server.js 3040 --config=../../../../jtaro.module.config.js",
+    "build": "node build.js"
   },
   "repository": {
     "type": "git",
@@ -24,10 +25,12 @@
     "eslint-config-vue": "^2.0.2",
     "eslint-plugin-vue": "^2.0.1",
     "jtaro": "^0.4.9",
+    "jtaro-bundle": "^0.2.3",
     "jtaro-module": "^0.2.3",
     "rollup": "^0.41.6",
     "rollup-plugin-babel": "^2.7.1",
     "rollup-plugin-paths": "^0.0.1",
+    "rollup-plugin-uglify": "^1.0.2",
     "rollup-plugin-vue2": "^0.8.0"
   },
   "dependencies": {

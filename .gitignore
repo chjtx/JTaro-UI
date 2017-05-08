@@ -2,5 +2,5 @@ node_modules/
 .DS_Store
 .git/
 npm-debug.log
-build/
+build/**
 !build/index.html

@@ -44,7 +44,7 @@ export default {
         type: '表单组件',
         children: [{
           name: '输入框（Input）',
-          url: ''
+          url: 'pages/input'
         }, {
           name: '开关（Switch）',
           url: ''

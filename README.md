@@ -10,7 +10,7 @@ http://www.chjtx.com/JTaro-UI/build/
 
 ## 开始使用
 
-一个比较合理的`index.html`模板
+一个比较通用的`index.html`模板
 
 ```html
 <!DOCTYPE html>
@@ -20,6 +20,7 @@ http://www.chjtx.com/JTaro-UI/build/
     <meta name="viewport" content="initial-scale=1, user-scalable=0">
     <title>JTaro UI</title>
     <link rel="stylesheet" href="./src/jtaro-ui.css">
+    <link rel="stylesheet" href="./src/jtaro-ui-iconfont.css">
     <link rel="stylesheet" id="jtaro_ui_theme" href="./src/jtaro-ui-theme-default.css">
     <script src="./node_modules/jtaro-module/src/client.js"></script>
     <script src="./node_modules/vue/dist/vue.js"></script>
@@ -38,7 +39,6 @@ http://www.chjtx.com/JTaro-UI/build/
 </html>
 ```
 
-- 先引入基础样式文件`jtaro-ui.css`，再引入主题样式文件`jtaro-ui-theme-default.css`
 - `jtaro-ui.js`依赖JRoll，因此需要放在`jroll.js`后面
 
 ## 主题颜色
@@ -57,14 +57,34 @@ document.getElementById('jtaro_ui_theme').href = './jtaro-ui-theme-yours.css'
 
 到[阿里巴巴矢量图标库](http://www.iconfont.cn/)下载图标
 
-修改`src/jtaro-ui-theme-default.css`里的字体图标内容，例：
+修改`src/jtaro-ui-iconfont.css`里的字体图标内容，例：
 
 ```css
 .j-icon-menu:before { content: "\e601"; }
 .j-icon-github:before { content: "\e6c5"; }
 ```
 
-下载下来的字体文件必须命名为`iconfont`，共有四个文件`iconfont.eot`、`iconfont.svg`、`iconfont.ttf`、`iconfont.woff`，这四个文件都必须放在`src/jtaro-ui.css`相同目录里
+与阿里图标库写法有点区别
+
+```css
+/* icon */
+[class*="j-icon-"],
+.j-icon {
+    font-family: "jtaro-ui" !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+```
+
+JTaro UI 使用了`[class*="j-icon-"]`对字体进行定义，因此只需要一个class
+
+```html
+<!-- 阿里图标库调用示例 -->
+<i class="icon-font icon-font-xxx"></i>
+
+<!-- JTaro UI 调用示例 -->
+<i class="j-icon-xxx"></i>
+```
 
 ## 栅格
 

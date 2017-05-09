@@ -17,7 +17,7 @@
     var y = touch.clientY - t.y - p.top
     var div = doc.createElement('div')
     var w = el.offsetWidth > el.offsetHeight ? el.offsetWidth : el.offsetHeight
-    var timing = isRound ? 'cubic-bezier(0,1,.38,.91)' : 'cubic-bezier(.04,.33,.23,.6)'
+    var timing = isRound ? 'cubic-bezier(0,1,.38,.91)' : 'cubic-bezier(.04,.13,.23,.6)'
 
     if (win.getComputedStyle(el).position === 'static') {
       el.style.position = 'relative'

@@ -2,13 +2,17 @@
   .input-body {
     padding: 15px;
   }
+  .input-item {
+    margin-bottom: 20px;
+  }
 </style>
 <div>
   <DemoHeader title="提示" />
 
-  <j-body class="input-body">
-    <j-input placeholder="提示文字"/>
-    <j-input :value="value"/>
-    <j-input placeholder="提示文字" label="标签文字"/>
+  <j-body class="input-body" ref="jbody">
+    <j-input class="input-item" placeholder="提示文字"/>
+    <j-input class="input-item" :value="value" placeholder="提示文字"/>
+    <j-input class="input-item" placeholder="提示文字" label="标签文字"/>
+    <j-input class="input-item" placeholder="提示文字" label="浮动标签" labelFloat/>
   </j-body>
 </div>

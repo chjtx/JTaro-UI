@@ -885,6 +885,10 @@ isarray@^1.0.0, isarray@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/isarray/-/isarray-1.0.0.tgz#bb935d48582cba168c06834957a54a3e07124f11"
 
+jroll-fixedinput@^1.2.3:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/jroll-fixedinput/-/jroll-fixedinput-1.2.3.tgz#8adc93739433419349262a78454c3ee6d39fa48c"
+
 jroll@^2.4.5, jroll@^2.4.9:
   version "2.4.9"
   resolved "https://registry.yarnpkg.com/jroll/-/jroll-2.4.9.tgz#5b6b95caf96da2b897c80bca929426faec89ead5"

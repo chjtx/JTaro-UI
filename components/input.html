@@ -3,7 +3,7 @@
     position: relative;
   }
   this.j-input-haslabel {
-    padding-top: 24px;
+    padding-top: 16px;
   }
   .j-input-placeholder {
     position: absolute;
@@ -42,18 +42,8 @@
     transform: scaleX(1);
   }
   .j-input-label-float {
-    position: absolute;
-    height: 34px;
-    line-height: 34px;
-    opacity: 1;
-    -webkit-transition: -webkit-transform 300ms;
-    transition: transform 300ms;
-    -webkit-transform: scale(.75);
-    transform: scale(.75);
-    -webkit-transform-origin: left top;
-    transform-origin: left top;
-    top: 0px;
-    left: 0;
+    -webkit-transform: translateY(-20px) scale(.75)!important;
+    transform: translateY(-20px) scale(.75)!important;
   }
   .j-input-label-color {
     color: #757575;
@@ -62,14 +52,17 @@
     position: absolute;
     height: 34px;
     line-height: 34px;
-    color: #aeaeae;
-    opacity: 1;
-    transition: 300ms;
+    -webkit-transform-origin: left top;
+    transform-origin: left top;
+    -webkit-transition: -webkit-transform 300ms;
+    transition: transform 300ms;
+    -webkit-transform: translateY(0px) scale(1);
+    transform: translateY(0px) scale(1);
   }
 </style>
 <div :class="{'j-input-haslabel': label}">
-  <div class="j-input-placeholder" :class="{focus: inputValue}">{{placeholder}}</div>
-  <div class="j-input-label-float" :class="labelObject">{{label}}</div>
+  <div class="j-input-placeholder" :class="holderObject">{{placeholder}}</div>
+  <div class="j-input-label" :class="labelObject">{{label}}</div>
   <input class="j-input" @focus="onFocus" @blur="onBlur" @input="onInput" @change="onChange"
     :value="inputValue" :name="name" :type="type" :disabled="disabled">
   <div class="j-input-line j-bg-primary" :class="{focus: focused}"></div>

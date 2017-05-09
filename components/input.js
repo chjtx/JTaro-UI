@@ -3,7 +3,21 @@ import html from './input.html'
 
 (function (v) {
   v.component('j-input', {
-    props: ['placeholder', 'value', 'name', 'type', 'disabled', 'label'],
+    props: {
+      'placeholder': String,
+      'value': String,
+      'name': String,
+      'type': String,
+      'label': String,
+      'disabled': {
+        type: Boolean,
+        default: false
+      },
+      'labelFloat': {
+        type: Boolean,
+        default: false
+      }
+    },
     data: function () {
       return {
         focused: false,
@@ -11,14 +25,23 @@ import html from './input.html'
       }
     },
     computed: {
+      holderObject: function () {
+        return {
+          'focus': this.inputValue || (this.labelFloat && !this.focused)
+        }
+      },
       labelObject: function () {
         return {
           'j-color-primary': this.focused,
-          'j-input-label-color': !this.focused
+          'j-input-label-color': !this.focused,
+          'j-input-label-float': this.inputValue || (!this.labelFloat || (this.labelFloat && this.focused))
         }
       }
     },
     template: html,
+    mounted: function () {
+      console.log(this.labelFloat)
+    },
     methods: {
       onFocus: function (e) {
         this.focused = true

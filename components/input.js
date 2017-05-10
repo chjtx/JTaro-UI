@@ -9,6 +9,10 @@ import html from './input.html'
       'name': String,
       'type': String,
       'label': String,
+      'multiLine': {
+        type: Boolean,
+        default: false
+      },
       'disabled': {
         type: Boolean,
         default: false
@@ -16,7 +20,12 @@ import html from './input.html'
       'labelFloat': {
         type: Boolean,
         default: false
-      }
+      },
+      'rows': {
+        type: [String, Number],
+        default: 1
+      },
+      'rowsMax': [String, Number]
     },
     data: function () {
       return {
@@ -27,6 +36,7 @@ import html from './input.html'
     computed: {
       holderObject: function () {
         return {
+          'j-input-label-disabled': this.disabled,
           'focus': this.inputValue || (this.labelFloat && !this.focused)
         }
       },
@@ -34,13 +44,16 @@ import html from './input.html'
         return {
           'j-color-primary': this.focused,
           'j-input-label-color': !this.focused,
+          'j-input-label-disabled': this.disabled,
           'j-input-label-float': this.inputValue || (!this.labelFloat || (this.labelFloat && this.focused))
         }
       }
     },
     template: html,
     mounted: function () {
-      console.log(this.labelFloat)
+      if (this.multiLine) {
+        this.resetHeight()
+      }
     },
     methods: {
       onFocus: function (e) {
@@ -56,13 +69,26 @@ import html from './input.html'
       },
       onChange: function (e) {
         this.$emit('change', e, e.target.value)
+      },
+      resetHeight: function () {
+        var scrollHeight = this.$refs.hiddenTextArea.scrollHeight - 8
+        var h = 24 * this.rows
+        var height = h > scrollHeight ? h : scrollHeight
+        var maxHeight = 24 * (this.rowsMax || 0)
+        this.$refs.textArea.style.height = (maxHeight > 0 ? (height > maxHeight ? maxHeight : height) : height) + 'px'
       }
     },
     watch: {
       value: function (val) {
         this.inputValue = val
       },
-      inputValue: function (val) {
+      inputValue: function (val, oldVal) {
+        var me = this
+        if (val !== oldVal && this.multiLine) {
+          this.$nextTick(function () {
+            me.resetHeight()
+          })
+        }
         this.$emit('input', val)
       }
     }

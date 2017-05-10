@@ -10,9 +10,11 @@
   <DemoHeader title="提示" />
 
   <j-body class="input-body" ref="jbody">
-    <j-input class="input-item" placeholder="提示文字"/>
-    <j-input class="input-item" :value="value" placeholder="提示文字"/>
-    <j-input class="input-item" placeholder="提示文字" label="标签文字"/>
-    <j-input class="input-item" placeholder="提示文字" label="浮动标签" labelFloat/>
+    <j-input class="input-item" v-model="value" placeholder="提示文字"/>
+    <j-input class="input-item" v-model="valueLabel" placeholder="带标签的输入框" label="标签文字"/>
+    <j-input class="input-item" v-model="valueFloat" placeholder="标签会自动浮起的输入框" label="浮动标签" labelFloat/>
+    <j-input class="input-item" v-model="valueMulti" placeholder="不限制行数的输入框" label="多行输入" labelFloat multiLine/>
+    <j-input class="input-item" v-model="valueLimit" placeholder="最小3行最大6行的输入框" label="限3-6行" multiLine rows="3" rowsMax="6"/>
+    <j-input class="input-item" v-model="valueDisabled" label="被禁用的输入框" disabled/>
   </j-body>
 </div>

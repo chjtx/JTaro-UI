@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "node ./node_modules/jtaro-module/src/server.js 3040 --config=../../../../jtaro.module.config.js",
+    "dev": "node ./node_modules/jtaro-module/src/server.js 3040 --config=../../../jtaro.module.config.js",
     "build": "node build.js"
   },
   "repository": {
@@ -27,7 +27,7 @@
     "jroll-fixedinput": "^1.2.3",
     "jtaro": "^0.5.0",
     "jtaro-bundle": "^0.2.3",
-    "jtaro-module": "^0.2.3",
+    "jtaro-module": "^0.2.4",
     "rollup": "^0.41.6",
     "rollup-plugin-babel": "^2.7.1",
     "rollup-plugin-paths": "^0.0.1",

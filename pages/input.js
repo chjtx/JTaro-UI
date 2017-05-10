@@ -10,7 +10,12 @@ export default {
   },
   data: function () {
     return {
-      value: '默认文字'
+      value: '默认文字',
+      valueLabel: '',
+      valueFloat: '',
+      valueMulti: '',
+      valueLimit: '',
+      valueDisabled: '已禁用'
     }
   },
   mounted: function () {

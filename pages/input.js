@@ -20,5 +20,14 @@ export default {
   },
   mounted: function () {
     this.$refs.jbody.jroll.fixedinput()
+  },
+  watch: {
+    valueMulti: function () {
+      // 多行输入框的高度变化时需要执行jroll实例的refresh刷新jroll实例滑动高度
+      this.$refs.jbody.jroll.refresh()
+    },
+    valueLimit: function () {
+      this.$refs.jbody.jroll.refresh()
+    }
   }
 }

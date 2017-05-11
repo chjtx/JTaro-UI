@@ -5,11 +5,15 @@
   .input-item {
     margin-bottom: 20px;
   }
+  .input-body>div {
+    padding-bottom: 100px;
+  }
 </style>
 <div>
-  <DemoHeader title="提示" />
+  <DemoHeader title="输入框" />
 
   <j-body class="input-body" ref="jbody">
+    <j-input class="input-item"/>
     <j-input class="input-item" v-model="value" placeholder="提示文字"/>
     <j-input class="input-item" v-model="valueLabel" placeholder="带标签的输入框" label="标签文字"/>
     <j-input class="input-item" v-model="valueFloat" placeholder="标签会自动浮起的输入框" label="浮动标签" labelFloat/>

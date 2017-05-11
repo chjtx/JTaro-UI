@@ -71,11 +71,11 @@ import html from './input.html'
         this.$emit('change', e, e.target.value)
       },
       resetHeight: function () {
-        var scrollHeight = this.$refs.hiddenTextArea.scrollHeight - 8
+        var scrollHeight = this.$refs.hiddenTextArea.scrollHeight
         var h = 24 * this.rows
         var height = h > scrollHeight ? h : scrollHeight
         var maxHeight = 24 * (this.rowsMax || 0)
-        this.$refs.textArea.style.height = (maxHeight > 0 ? (height > maxHeight ? maxHeight : height) : height) + 'px'
+        this.$refs.textArea.style.height = (maxHeight > 0 ? (height > maxHeight ? maxHeight : height) : height + 2) + 'px'
       }
     },
     watch: {

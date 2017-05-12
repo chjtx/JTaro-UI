@@ -47,7 +47,7 @@ export default {
           url: 'pages/input'
         }, {
           name: '开关（Switch）',
-          url: ''
+          url: 'pages/switch'
         }, {
           name: '选择器（Selector）',
           url: ''

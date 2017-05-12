@@ -1,66 +1,66 @@
 /* color */
 /* 主题背景颜色 参考 material design color */
 .j-bg-weaken {
-  background: #B39DDB; /* 200 */
+  background: #B39DDB!important; /* 200 */
 }
 .j-bg-primary {
-  background: #673AB7; /* 500 */
+  background: #673AB7!important; /* 500 */
 }
 .j-bg-deepen {
-  background: #4527A0; /* 800 */
+  background: #4527A0!important; /* 800 */
 }
 
 /* 一般背景颜色 */
 .j-bg-gray {
-  background: #EEEEEE;
+  background: #EEEEEE!important;
 }
 .j-bg-dark-gray {
-  background: #BDBDBD;
+  background: #BDBDBD!important;
 }
 
 /* 与背景色相辅的字体颜色 */
 .j-font-primary {
-  color: #fff;
+  color: #fff!important;
 }
 .j-font-second {
-  color: #EDE7F6; /* 50 */
+  color: #EDE7F6!important; /* 50 */
 }
 
 /* 主题文本颜色 */
 .j-color-weaken {
-  color: #B39DDB;
+  color: #B39DDB!important;
 }
 .j-color-primary {
-  color: #673AB7;
+  color: #673AB7!important;
 }
 .j-color-deepen {
-  color: #4527A0;
+  color: #4527A0!important;
 }
 
 /* 一般文本颜色 */
 .j-text-weakest {
-  color: #E0E0E0;
+  color: #E0E0E0!important;
 }
 .j-text-weaken {
-  color: #9E9E9E;
+  color: #9E9E9E!important;
 }
 .j-text-second {
-  color: #424242;
+  color: #424242!important;
 }
 .j-text-primary {
-  color: #212121;
+  color: #212121!important;
 }
 .j-text-deepen {
-  color: #000;
+  color: #000!important;
 }
 
 /* 边框颜色 */
 .j-border-weaken {
-  border-color: #B39DDB;
+  border-color: #B39DDB!important;
 }
 .j-border-primary {
-  border-color: #673AB7;
+  border-color: #673AB7!important;
 }
 .j-border-deepen {
-  border-color: #4527A0;
+  border-color: #4527A0!important;
 }

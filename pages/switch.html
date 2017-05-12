@@ -1,0 +1,21 @@
+<style>
+  .demo-body {
+    padding: 15px;
+  }
+  .demo-switch {
+    margin-bottom: 10px;
+  }
+</style>
+<div>
+  <DemoHeader title="开关" />
+
+  <j-body class="demo-body">
+    <j-switch class="demo-switch" label="开关"/>
+    <br>
+    <j-switch class="demo-switch" label="默认为 true" v-model="value"/>
+    <br>
+    <j-switch class="demo-switch" label="被禁用" disabled/>
+    <br>
+    <j-switch class="demo-switch" label="文字在左边" labelLeft/>
+  </j-body>
+</div>

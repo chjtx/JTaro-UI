@@ -72,10 +72,10 @@ import html from './input.html'
       },
       resetHeight: function () {
         var scrollHeight = this.$refs.hiddenTextArea.scrollHeight
-        var h = 24 * this.rows
+        var h = 28 * this.rows
         var height = h > scrollHeight ? h : scrollHeight
-        var maxHeight = 24 * (this.rowsMax || 0)
-        this.$refs.textArea.style.height = (maxHeight > 0 ? (height > maxHeight ? maxHeight : height) : height + 2) + 'px'
+        var maxHeight = 28 * (this.rowsMax || 0)
+        this.$refs.textArea.style.height = (maxHeight > 0 ? (height > maxHeight ? maxHeight : height) : height) + 2 + 'px'
       }
     },
     watch: {

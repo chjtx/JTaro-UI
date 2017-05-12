@@ -889,7 +889,11 @@ jroll-fixedinput@^1.2.3:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/jroll-fixedinput/-/jroll-fixedinput-1.2.3.tgz#8adc93739433419349262a78454c3ee6d39fa48c"
 
-jroll@^2.4.5, jroll@^2.4.9:
+jroll@^2.4.10:
+  version "2.4.10"
+  resolved "https://registry.yarnpkg.com/jroll/-/jroll-2.4.10.tgz#99125accf6dba70e2e139d241d45dd7315beec53"
+
+jroll@^2.4.5:
   version "2.4.9"
   resolved "https://registry.yarnpkg.com/jroll/-/jroll-2.4.9.tgz#5b6b95caf96da2b897c80bca929426faec89ead5"
 

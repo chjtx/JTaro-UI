@@ -40,6 +40,11 @@ import html from './input.html'
           'focus': this.inputValue || (this.labelFloat && !this.focused)
         }
       },
+      inputObject: function () {
+        return {
+          'j-input-ios': this.disabled && /iphone|ipad|ipod|ios/.test(window.navigator.userAgent.toLowerCase())
+        }
+      },
       labelObject: function () {
         return {
           'j-color-primary': this.focused,

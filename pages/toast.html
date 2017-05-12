@@ -2,13 +2,17 @@
   .toast-body {
     padding: 15px;
   }
+  .toast-menus {
+    display: block;
+    margin-bottom: 5px;
+  }
 </style>
 <div>
   <DemoHeader title="提示" />
 
   <j-body class="toast-body">
-    <j-button width="100%" @action="showToast">弹出提示</j-button>
-    <j-button width="100%" @action="showToastForever">不自动消失</j-button>
-    <j-button width="100%" @action="destroyToast">手动关闭</j-button>
+    <j-button class="toast-menus" width="100%" @action="showToast">弹出提示</j-button>
+    <j-button class="toast-menus" width="100%" @action="showToastForever">不自动消失</j-button>
+    <j-button class="toast-menus" width="100%" @action="destroyToast">手动关闭</j-button>
   </j-body>
 </div>

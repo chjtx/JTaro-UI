@@ -7,6 +7,7 @@
   }
   .j-input-placeholder {
     position: absolute;
+    font-size: 14px;
     height: 34px;
     line-height: 34px;
     color: #aeaeae;
@@ -28,7 +29,6 @@
     height: 34px;
     line-height: 26px;
     padding: 4px 10px;
-    /*box-sizing: content-box;*/
     font-size: 14px;
     border: 1px solid #e0e0e0;
     border-radius: 2px;
@@ -39,6 +39,9 @@
     border-color: #d7dde4;
     color: #c3cbd6;
     border-style: dashed;
+  }
+  .j-input.j-input-ios:disabled {
+    color: #6f6f6f!important;
   }
   .j-input-line {
     position: relative;
@@ -62,6 +65,7 @@
   }
   .j-input-label {
     position: absolute;
+    font-size: 14px;
     height: 34px;
     line-height: 34px;
     -webkit-transform-origin: left top;
@@ -85,12 +89,12 @@
   <div class="j-input-label" :class="labelObject">{{label}}</div>
 
   <input v-if="!multiLine" class="j-input" @focus="onFocus" @blur="onBlur" @input="onInput" @change="onChange"
-    :value="inputValue" :name="name" :type="type" :disabled="disabled">
+    :value="inputValue" :name="name" :type="type" :disabled="disabled" :class="inputObject">
 
   <textarea v-if="multiLine" class="j-input j-input-hidden" :value="inputValue"
     ref="hiddenTextArea"></textarea>
   <textarea v-if="multiLine" class="j-input" @focus="onFocus" @blur="onBlur" @input="onInput" @change="onChange"
-    :value="inputValue" :name="name" :disabled="disabled" ref="textArea"></textarea>
+    :value="inputValue" :name="name" :disabled="disabled" ref="textArea" :class="inputObject"></textarea>
 
   <div class="j-input-line j-bg-primary" :class="{focus: focused}"></div>
 </div>

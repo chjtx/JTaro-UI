@@ -11,6 +11,10 @@
     font-size: 14px;
     padding: 20px 0 10px 0;
   }
+  .home-menus {
+    display: block;
+    margin-bottom: 5px;
+  }
 </style>
 <div>
   <j-appbar title="JTaro UI">
@@ -28,7 +32,7 @@
   <j-body class="home-body">
     <div v-for="(m, i) in menus" :key="i">
       <div class="home-menu-title j-color-primary">{{m.type}}</div>
-      <j-button v-for="(c, j) in m.children"
+      <j-button class="home-menus" v-for="(c, j) in m.children"
         :type="c.url ? '' : 'disabled'"
         @action="gotoSubPage(c.url)"
         :key="j"

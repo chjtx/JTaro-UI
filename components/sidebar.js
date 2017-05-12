@@ -4,7 +4,15 @@ import html from './sidebar.html'
 
 (function (v) {
   v.component('j-sidebar', {
-    props: ['show', 'side', 'width', 'bg'],
+    props: {
+      'show': {
+        type: Boolean,
+        default: false
+      },
+      'side': String,
+      'width': [String, Number],
+      'bg': String
+    },
     template: html,
     computed: {
       styleObject: function () {

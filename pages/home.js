@@ -9,7 +9,7 @@ export default {
   data: function () {
     return {
       type: 'text',
-      show: 0,
+      show: false,
       menus: [{
         type: '辅佐类',
         children: [{

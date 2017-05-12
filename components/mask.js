@@ -3,7 +3,12 @@ import html from './mask.html'
 
 (function (v) {
   v.component('j-mask', {
-    props: ['show'],
+    props: {
+      'show': {
+        type: Boolean,
+        default: false
+      }
+    },
     template: html,
     watch: {
       show: function () {

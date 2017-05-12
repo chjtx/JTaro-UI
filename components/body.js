@@ -3,7 +3,14 @@ import html from './body.html'
 
 (function (v, Jro) {
   v.component('j-body', {
-    props: ['outer-bg', 'inner-bg', 'options'],
+    props: {
+      'outer-bg': String,
+      'inner-bg': String,
+      'options': {
+        type: Object,
+        default: null
+      }
+    },
     template: html,
     data: function () {
       return {
@@ -12,10 +19,12 @@ import html from './body.html'
       }
     },
     mounted: function () {
-      this.jroll = new Jro(this.$el, this.options)
+      this.$nextTick(function () {
+        this.jroll = new Jro(this.$el, this.options)
+      })
     },
     updated: function () {
-      this.jroll.refresh()
+      if (this.jroll) this.jroll.refresh()
     }
   })
 })(Vue, JRoll)

@@ -5,11 +5,22 @@ import html from './dialog.html'
 
 (function (v) {
   v.component('j-dialog', {
-    props: ['show', 'buttons'],
+    props: {
+      'show': {
+        type: Boolean,
+        default: false
+      },
+      'buttons': {
+        type: Array,
+        default: function () {
+          return []
+        }
+      }
+    },
     template: html,
     computed: {
       btns: function () {
-        return this.buttons || []
+        return this.buttons
       }
     },
     watch: {

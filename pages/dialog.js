@@ -9,17 +9,17 @@ export default {
   },
   data: function () {
     return {
-      show: 0,
+      show: false,
       buttons: ['取消', '确定']
     }
   },
   methods: {
     showDialog: function () {
-      this.show = 1
+      this.show = true
     },
     clickDialog: function (index) {
       if (index === -1 || index === 0) {
-        this.show = 0
+        this.show = false
       }
     }
   }

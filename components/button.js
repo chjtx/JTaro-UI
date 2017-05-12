@@ -3,7 +3,15 @@ import html from './button.html'
 
 (function (v) {
   v.component('j-button', {
-    props: ['type', 'width', 'height', 'round'],
+    props: {
+      'type': String,
+      'width': [String, Number],
+      'height': [String, Number],
+      'round': {
+        type: Boolean,
+        default: false
+      }
+    },
     template: html,
     computed: {
       classObject: function () {

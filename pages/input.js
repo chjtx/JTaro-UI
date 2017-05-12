@@ -20,7 +20,9 @@ export default {
     }
   },
   mounted: function () {
-    this.$refs.jbody.jroll.fixedinput()
+    this.$nextTick(function () {
+      this.$refs.jbody.jroll.fixedinput()
+    })
   },
   watch: {
     valueMulti: function () {

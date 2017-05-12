@@ -9,7 +9,7 @@ export default {
   },
   data: function () {
     return {
-      show: 0,
+      show: false,
       buttons: ['取消', '确定']
     }
   },

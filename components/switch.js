@@ -12,12 +12,26 @@ import html from './switch.html'
       'labelLeft': {
         type: Boolean,
         default: false
+      },
+      'disabled': {
+        type: Boolean,
+        default: false
       }
     },
     template: html,
     data: function () {
       return {
-        result: this.value
+        result: this.value,
+        color: 'rgba(0, 0, 0, .05)'
+      }
+    },
+    mounted: function () {
+      var color = window.getComputedStyle(this.$refs.bgColor)['background-color']
+      if (color) {
+        color = /rgb\(([^)]+)\)/.exec(color)
+      }
+      if (color && color[1]) {
+        this.color = 'rgba(' + color[1] + ', .05)'
       }
     },
     computed: {
@@ -25,26 +39,31 @@ import html from './switch.html'
         return {
           'j-switch-left': !this.labelLeft,
           'j-switch-right': this.labelLeft,
-          'j-bg-weaken': this.result
+          'j-bg-weaken': this.result && !this.disabled
         }
       },
       ringObject: function () {
         return {
-          'j-bg-primary': this.result
+          'j-bg-primary': this.result && !this.disabled,
+          'j-switch-on': this.result
+        }
+      },
+      labelObject: function () {
+        return {
+          'j-switch-disabled': this.disabled
         }
       }
-      // ,
-      // rippleObject: function () {
-      //   return {
-      //     'j-switch-ripple-show': this.result
-      //   }
-      // }
     },
     methods: {
       switchValue: function () {
+        if (this.disabled) return
+
         this.result = !this.result
         var div = document.createElement('div')
         div.className = 'j-switch-ripple'
+        if (this.result) {
+          div.style.backgroundColor = this.color
+        }
         this.$refs.ring.appendChild(div)
         setTimeout(function () {
           div.parentNode.removeChild(div)

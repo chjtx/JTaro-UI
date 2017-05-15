@@ -258,3 +258,22 @@ var loader = new Loader({
 3、销毁 loader.destroy();
 */
 ```
+
+### j-input
+
+```html
+<j-input v-model="value" placeholder="提示文字" label="多行输入"
+  rows="3" rowsMax="6" labelFloat multiLine disabled
+  @input="inputEvent"
+  @change="changeEvent"
+  @focus="focusEvent"
+  @blur="blurEvent"/>
+```
+
+### j-switch
+
+```html
+<j-switch label="开关" v-model="value" disabled labelLeft/>
+```
+
+

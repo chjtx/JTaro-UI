@@ -37,7 +37,7 @@
     float: right;
     margin-left: 8px;
   }
-  .j-bg-primary {
+  .j-switch-on {
     -webkit-transform: translateX(16px);
     transform: translateX(16px);
   }
@@ -45,7 +45,7 @@
     position: absolute;
     height: 40px;
     width: 40px;
-    background: rgba(0,0,0,.05);
+    background: rgba(0, 0, 0, .05);
     left: -10px;
     top: -10px;
     border-radius: 40px;
@@ -57,6 +57,12 @@
   }
   .j-switch-ripple-show {
     animation:j-switch-animation 600ms;
+  }
+  .j-switch-hidden {
+    display: none;
+  }
+  .j-switch-disabled {
+    color: #c3cbd6;
   }
   @keyframes j-switch-animation {
     0% {
@@ -73,10 +79,10 @@
   }
 </style>
 <div @click="switchValue">
+  <div class="j-switch-hidden j-bg-primary" ref="bgColor"></div>
   <div class="j-switch-bar" :class="barObject">
     <div class="j-switch-ring" ref="ring" :class="ringObject">
-      <!--<div class="j-switch-ripple" ref="ripple"></div>-->
     </div>
   </div>
-  <span >{{ label }}</span>
+  <span :class="labelObject">{{ label }}</span>
 </div>

@@ -50,7 +50,7 @@ export default {
           url: 'pages/switch'
         }, {
           name: '选择器（Selector）',
-          url: ''
+          url: 'pages/select'
         }, {
           name: '单选（Radio）',
           url: ''

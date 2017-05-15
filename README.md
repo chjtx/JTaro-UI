@@ -261,6 +261,8 @@ var loader = new Loader({
 
 ### j-input
 
+默认宽度为100%
+
 ```html
 <j-input v-model="value" placeholder="提示文字" label="多行输入"
   rows="3" rowsMax="6" labelFloat multiLine disabled
@@ -274,6 +276,16 @@ var loader = new Loader({
 
 ```html
 <j-switch label="开关" v-model="value" disabled labelLeft/>
+```
+
+### j-select
+
+```html
+<j-select v-model="value" multiple>
+  <j-options value="1">选项一</j-options>
+  <j-options value="2">选项二</j-options>
+  <j-options value="3">选项三</j-options>
+</j-select>
 ```
 
 

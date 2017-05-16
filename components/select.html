@@ -16,7 +16,6 @@
     font-size: 14px;
     border: 1px solid #e0e0e0;
     border-radius: 2px;
-    overflow: auto;
   }
   .j-select::after {
     content: '';
@@ -31,29 +30,15 @@
     top: 13px;
     right: 10px;
   }
-  .j-select-ul {
-    position: absolute;
-    top: 50%;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: #fff;
-  }
-  .j-select-mask {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: none;
-  }
 </style>
 <div>
   <div class="j-select" @click="showOptions">{{ inputValue }}</div>
   <div class="j-select-mask" ref="mask">
     <j-mask :show="toShow" @action="hideOptions"/>
-    <ul class="j-select-ul" ref="options">
-      <slot></slot>
-    </ul>
+    <div class="j-select-jroll" :class="cssObject" ref="jroll">
+      <ul class="j-select-ul" ref="options">
+        <slot></slot>
+      </ul>
+    </div>
   </div>
 </div>

@@ -1,0 +1,36 @@
+.j-select-ul {
+  padding: 15px;
+}
+ul.j-select-ul li {
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    list-style: none;
+    border: 1px solid #efefef;
+    border-radius: 4px;
+    margin: 5px;
+}
+.j-select-jroll {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  max-height: 50%;
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+  -webkit-transition: transform 300ms;
+  transition: transform 300ms;
+}
+.j-select-jroll.j-select-show {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+.j-select-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+}

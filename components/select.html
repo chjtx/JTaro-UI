@@ -36,6 +36,7 @@
   <div class="j-select-mask" ref="mask">
     <j-mask :show="toShow" @action="hideOptions"/>
     <div class="j-select-jroll" :class="cssObject" ref="jroll">
+      <div class="j-select-label j-text-primary">{{ label }}</div>
       <ul class="j-select-ul" ref="options">
         <slot></slot>
       </ul>

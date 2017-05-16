@@ -1,5 +1,6 @@
 .j-select-ul {
-  padding: 15px;
+  padding: 0 15px 15px;
+  margin-top: 32px;
 }
 ul.j-select-ul li {
     height: 38px;
@@ -8,7 +9,7 @@ ul.j-select-ul li {
     list-style: none;
     border: 1px solid #efefef;
     border-radius: 4px;
-    margin: 5px;
+    margin: 5px 0;
 }
 .j-select-jroll {
   position: absolute;
@@ -33,4 +34,13 @@ ul.j-select-ul li {
   right: 0;
   bottom: 0;
   display: none;
+}
+.j-select-label {
+  position: absolute;
+  z-index: 2;
+  height: 32px;
+  line-height: 32px;
+  background: #fff;
+  width: 100%;
+  padding-left: 15px;
 }

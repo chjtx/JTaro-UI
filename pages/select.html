@@ -10,12 +10,16 @@
   <DemoHeader title="选择器" />
 
   <j-body class="demo-body">
-    <j-select v-model="value">
-      <j-option value="1">选项一</j-option>
-      <j-option value="2">选项二</j-option>
-      <j-option value="3">选项三</j-option>
-    </j-select>
-    <br>
+    <div class="j-row-10">
+      <div class="j-col-4">{{ label1 }}</div>
+      <div class="j-col-6">
+        <j-select v-model="value" :label="label1">
+          <j-option value="1">选项一</j-option>
+          <j-option value="2">选项二</j-option>
+          <j-option value="3">选项三</j-option>
+        </j-select>
+      </div>
+    </div>
     <j-select v-model="valueMultiple" multiple>
       <j-option value="1">选项一</j-option>
       <j-option value="2">选项二</j-option>

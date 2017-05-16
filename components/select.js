@@ -36,7 +36,8 @@ import html from './select.html'
       'show': {
         type: Boolean,
         default: false
-      }
+      },
+      'label': String
     },
     template: html,
     data: function () {
@@ -55,7 +56,11 @@ import html from './select.html'
     mounted: function () {
       var showScrollBar = this.changeValue() > 6
       document.body.appendChild(this.$refs.mask)
-      this.jroll = new Jro(this.$refs.jroll, { scrollBarY: showScrollBar, scrollBarFade: true })
+      this.jroll = new Jro(this.$refs.jroll, {
+        scrollBarY: showScrollBar,
+        scrollBarFade: true,
+        scroller: this.$refs.options
+      })
     },
     updated: function () {
       if (this.jroll) this.jroll.refresh()

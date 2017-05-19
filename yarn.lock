@@ -938,13 +938,13 @@ jsx-ast-utils@^1.3.4:
   dependencies:
     object-assign "^4.1.0"
 
-jtaro-bundle@^0.2.4:
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/jtaro-bundle/-/jtaro-bundle-0.2.4.tgz#1a84904cd78024c2ebecb041f0cf885949506fad"
+jtaro-bundle@^0.2.5:
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/jtaro-bundle/-/jtaro-bundle-0.2.5.tgz#40b876c2743c13f911ed3dd0fcddf62a7c7780ec"
   dependencies:
     fs-extra "^2.0.0"
     rollup "^0.41.4"
-    rollup-plugin-jtaro-module "^0.1.0"
+    rollup-plugin-jtaro-module "^0.2.0"
 
 jtaro-module@^0.2.4:
   version "0.2.4"
@@ -1202,11 +1202,12 @@ rollup-plugin-babel@^2.7.1:
     object-assign "^4.1.0"
     rollup-pluginutils "^1.5.0"
 
-rollup-plugin-jtaro-module@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-jtaro-module/-/rollup-plugin-jtaro-module-0.1.0.tgz#9de339424804a863bef5292edc82343cee8b39a7"
+rollup-plugin-jtaro-module@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-jtaro-module/-/rollup-plugin-jtaro-module-0.2.0.tgz#b93dce0b87f2f9b2896f78195ec51c8bf4f02f00"
   dependencies:
     rollup-pluginutils "^1.5.2"
+    source-map "^0.5.6"
 
 rollup-plugin-paths@^0.0.1:
   version "0.0.1"

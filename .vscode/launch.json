@@ -7,6 +7,12 @@
     {
       "type": "node",
       "request": "launch",
+      "name": "build",
+      "program": "${workspaceRoot}/build.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
       "name": "dev",
       "program": "${workspaceRoot}/node_modules/jtaro-module/src/server.js",
       "args": [

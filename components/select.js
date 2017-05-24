@@ -9,12 +9,12 @@ import html from './select.html'
     props: {
       value: String
     },
-    template: '<li class="j-click-button" :class="css" :value="value" @click="selectValue"><slot></slot></li>',
+    template: '<li :class="css" :value="value" @click="selectValue"><slot></slot></li>',
     computed: {
       css: function () {
         return {
-          'j-bg-primary': String(this.value) === this.$parent.value,
-          'j-font-primary': String(this.value) === this.$parent.value
+          'j-color-primary': String(this.value) === this.$parent.value,
+          'j-select-active': String(this.value) === this.$parent.value
         }
       }
     },
@@ -36,20 +36,24 @@ import html from './select.html'
       'show': {
         type: Boolean,
         default: false
-      },
-      'label': String
+      }
     },
     template: html,
     data: function () {
       return {
         inputValue: '',
-        toShow: this.show
+        showing: this.show
       }
     },
     computed: {
       cssObject: function () {
         return {
-          'j-select-show': this.toShow
+          'j-select-show': this.showing
+        }
+      },
+      boxObject: function () {
+        return {
+          'j-border-primary': this.showing
         }
       }
     },
@@ -58,8 +62,7 @@ import html from './select.html'
       document.body.appendChild(this.$refs.mask)
       this.jroll = new Jro(this.$refs.jroll, {
         scrollBarY: showScrollBar,
-        scrollBarFade: true,
-        scroller: this.$refs.options
+        scrollBarFade: true
       })
     },
     updated: function () {
@@ -75,12 +78,12 @@ import html from './select.html'
         var me = this
         this.$refs.mask.style.display = 'block'
         setTimeout(function () {
-          me.toShow = true
+          me.showing = true
         }, 4)
       },
       hideOptions: function () {
         var me = this
-        this.toShow = false
+        this.showing = false
         setTimeout(function () {
           me.$refs.mask.style.display = 'none'
         }, 350)

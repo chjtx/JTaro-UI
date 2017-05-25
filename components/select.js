@@ -12,9 +12,12 @@ import html from './select.html'
     template: '<li :class="css" :value="value" @click="selectValue"><slot></slot></li>',
     computed: {
       css: function () {
+        var selected = this.$parent.multiple
+          ? this.$parent.findIndex(this.value, this.$parent.value)
+          : String(this.value) === String(this.$parent.value)
         return {
-          'j-color-primary': String(this.value) === this.$parent.value,
-          'j-select-active': String(this.value) === this.$parent.value
+          'j-color-primary': selected,
+          'j-select-active': selected
         }
       }
     },
@@ -42,7 +45,9 @@ import html from './select.html'
     data: function () {
       return {
         inputValue: '',
-        showing: this.show
+        showing: this.show,
+        showMoreUp: false,
+        showMoreDown: false
       }
     },
     computed: {
@@ -58,11 +63,17 @@ import html from './select.html'
       }
     },
     mounted: function () {
+      var me = this
       var showScrollBar = this.changeValue() > 6
       document.body.appendChild(this.$refs.mask)
       this.jroll = new Jro(this.$refs.jroll, {
         scrollBarY: showScrollBar,
         scrollBarFade: true
+      })
+
+      // 显示更多小箭头
+      this.jroll.on('scrollEnd', function () {
+        me.showMore(this.y, this.maxScrollY)
       })
     },
     updated: function () {
@@ -79,6 +90,9 @@ import html from './select.html'
         this.$refs.mask.style.display = 'block'
         setTimeout(function () {
           me.showing = true
+          setTimeout(function () {
+            me.showMore(me.jroll.y, me.jroll.maxScrollY)
+          }, 300)
         }, 4)
       },
       hideOptions: function () {
@@ -90,17 +104,66 @@ import html from './select.html'
       },
       changeValue: function () {
         var children = this.$refs.options.children
+        var tempArr = []
         for (var i = 0, l = children.length; i < l; i++) {
-          if (this.value === String(children[i].value)) {
-            this.inputValue = children[i].innerText
+          // 多项
+          if (this.multiple) {
+            this.value.forEach(function (v) {
+              if (String(v) === String(children[i].value)) {
+                tempArr.push(children[i].innerText)
+              }
+            })
+            this.inputValue = tempArr.join(',')
+
+          // 单项
+          } else {
+            if (this.value === String(children[i].value)) {
+              this.inputValue = children[i].innerText
+            }
           }
         }
         return l
       },
       setValue: function (val, text) {
-        this.inputValue = text
+        // 多项
+        var i = -1
+        if (this.multiple) {
+          i = this.value.indexOf(val)
+          if (i > -1) {
+            this.value.splice(i, 1)
+          }
+          this.inputValue = this.value.join(',')
+          val = this.value
+        // 单项
+        } else {
+          this.inputValue = text
+          this.hideOptions()
+        }
+
         this.$emit('input', val)
-        this.hideOptions()
+      },
+      showMore: function (y, max) {
+        var me = this
+        if (max === 0) {
+          me.showMoreUp = me.showMoreDown = false
+        } else if (y === 0) {
+          me.showMoreUp = false
+          me.showMoreDown = true
+        } else if (y === max) {
+          me.showMoreUp = true
+          me.showMoreDown = false
+        } else {
+          me.showMoreUp = true
+          me.showMoreDown = true
+        }
+      },
+      findIndex: function (val, arr) {
+        for (var i = 0, l = arr.length; i < l; i++) {
+          if (String(val) === String(arr[i])) {
+            return i
+          }
+        }
+        return -1
       }
     }
   })

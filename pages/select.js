@@ -11,8 +11,7 @@ export default {
   data: function () {
     return {
       value: '1',
-      valueMultiple: [],
-      label1: '第一题选项'
+      valueMultiple: [1,2]
     }
   }
 }

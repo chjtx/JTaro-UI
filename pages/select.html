@@ -5,14 +5,18 @@
   .demo-switch {
     margin-bottom: 10px;
   }
+  .j-row-10 {
+    line-height: 34px;
+    margin-bottom: 10px;
+  }
 </style>
 <div>
   <DemoHeader title="选择器" />
 
   <j-body class="demo-body">
     <div class="j-row-10">
-      <div class="j-col-4">{{ label1 }}</div>
-      <div class="j-col-6">
+      <div class="j-col-3"> 单项选择 </div>
+      <div class="j-col-7">
         <j-select v-model="value">
           <j-option value="1">选项一</j-option>
           <j-option value="2">选项二</j-option>
@@ -20,19 +24,24 @@
         </j-select>
       </div>
     </div>
-    <j-select v-model="valueMultiple" multiple>
-      <j-option value="1">选项一</j-option>
-      <j-option value="2">选项二</j-option>
-      <j-option value="3">选项三</j-option>
-      <j-option value="3">选项三</j-option>
-      <j-option value="3">选项三</j-option>
-      <j-option value="3">选项三</j-option>
-      <j-option value="3">选项三</j-option>
-      <j-option value="3">选项三</j-option>
-      <j-option value="3">选项三</j-option>
-      <j-option value="3">选项三</j-option>
-      <j-option value="3">选项三</j-option>
-    </j-select>
+    <div class="j-row-10">
+      <div class="j-col-3"> 多项选择 </div>
+      <div class="j-col-7">
+        <j-select v-model="valueMultiple" multiple>
+          <j-option value="1">选项一</j-option>
+          <j-option value="2">选项二</j-option>
+          <j-option value="3">选项三</j-option>
+          <j-option value="3">选项三</j-option>
+          <j-option value="3">选项三</j-option>
+          <j-option value="3">选项三</j-option>
+          <j-option value="3">选项三</j-option>
+          <j-option value="3">选项三</j-option>
+          <j-option value="3">选项三</j-option>
+          <j-option value="3">选项三</j-option>
+          <j-option value="3">选项三</j-option>
+        </j-select>
+      </div>
+    </div>
     <select>
       <option>选项一</option>
       <option>选项一</option>

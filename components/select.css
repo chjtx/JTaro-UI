@@ -11,7 +11,7 @@ ul.j-select-ul li {
   bottom: 10px;
   left: 10px;
   right: 10px;
-  padding: 15px;
+  padding: 18px 15px;
   border-radius: 2px;
   background: #fff;
   height: 50%;
@@ -52,4 +52,28 @@ ul.j-select-ul li {
   border-left-color: transparent;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+.j-select-more-up {
+  position: absolute;
+  border: 2px solid #e1e1e1;
+  width: 10px;
+  height: 10px;
+  left: 50%;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: 5px;
+}
+.j-select-more-down {
+  position: absolute;
+  border: 2px solid #e1e1e1;
+  width: 10px;
+  height: 10px;
+  left: 50%;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  bottom: 5px;
 }

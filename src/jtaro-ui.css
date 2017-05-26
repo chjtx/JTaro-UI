@@ -132,3 +132,9 @@ div, a, button, input, textarea { outline: none; -webkit-tap-highlight-color: tr
     width: 100%;
 }
 
+/* tools */
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

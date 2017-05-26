@@ -9,6 +9,9 @@
     line-height: 34px;
     margin-bottom: 10px;
   }
+  .text-center {
+    text-align: center;
+  }
 </style>
 <div>
   <DemoHeader title="选择器" />
@@ -16,13 +19,25 @@
   <j-body class="demo-body">
     <div class="j-row-10">
       <div class="j-col-3"> 单项选择 </div>
-      <div class="j-col-7">
+      <div class="j-col-5">
         <j-select v-model="value">
           <j-option value="1">选项一</j-option>
           <j-option value="2">选项二</j-option>
           <j-option value="3">选项三</j-option>
         </j-select>
       </div>
+      <div class="j-col-2 text-center ellipsis">{{ value }}</div>
+    </div>
+    <div class="j-row-10">
+      <div class="j-col-3"> 不设value </div>
+      <div class="j-col-5">
+        <j-select v-model="noValue">
+          <j-option>选项一</j-option>
+          <j-option>选项二</j-option>
+          <j-option>选项三</j-option>
+        </j-select>
+      </div>
+      <div class="j-col-2 text-center ellipsis">{{ noValue }}</div>
     </div>
     <div class="j-row-10">
       <div class="j-col-3"> 多项选择 </div>
@@ -31,35 +46,18 @@
           <j-option value="1">选项一</j-option>
           <j-option value="2">选项二</j-option>
           <j-option value="3">选项三</j-option>
-          <j-option value="3">选项三</j-option>
-          <j-option value="3">选项三</j-option>
-          <j-option value="3">选项三</j-option>
-          <j-option value="3">选项三</j-option>
-          <j-option value="3">选项三</j-option>
-          <j-option value="3">选项三</j-option>
-          <j-option value="3">选项三</j-option>
-          <j-option value="3">选项三</j-option>
+          <j-option value="4">选项四</j-option>
+          <j-option value="5">选项五</j-option>
+          <j-option value="6">选项六</j-option>
+          <j-option value="7">选项七</j-option>
+          <j-option value="8">选项八</j-option>
+          <j-option value="9">选项九</j-option>
+          <j-option value="10">选项十</j-option>
         </j-select>
       </div>
     </div>
-    <select>
-      <option>选项一</option>
-      <option>选项一</option>
-      <option>选项一</option>
-      <option>选项一</option>
-      <option>选项一</option>
-      <option>选项一</option>
-      <option>选项一</option>
-      <option>选项一</option>
-      <option>选项一</option>
-      <option>选项一</option>
-      <option>选项一</option>
-      <option>选项一</option>
-      <option>选项一</option>
-      <option>选项一</option>
-      <option>选项一</option>
-      <option>选项一</option>
-      <option>选项一</option>
-    </select>
+    <div class="j-row-10">
+      <div class="j-col-10 text-center ellipsis"> {{ valueMultiple }} </div>
+    </div>
   </j-body>
 </div>

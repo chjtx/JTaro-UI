@@ -11,7 +11,8 @@ export default {
   data: function () {
     return {
       value: '1',
-      valueMultiple: [1,2]
+      noValue: '',
+      valueMultiple: [1, 2]
     }
   }
 }

@@ -9,21 +9,29 @@ import html from './select.html'
     props: {
       value: String
     },
+    data: function () {
+      return {
+        thisValue: this.value
+      }
+    },
     template: '<li :class="css" :value="value" @click="selectValue"><slot></slot></li>',
     computed: {
       css: function () {
         var selected = this.$parent.multiple
-          ? this.$parent.findIndex(this.value, this.$parent.value)
-          : String(this.value) === String(this.$parent.value)
+          ? this.$parent.findIndex(this.value, this.$parent.value) > -1
+          : String(this.thisValue) === String(this.$parent.value)
         return {
           'j-color-primary': selected,
           'j-select-active': selected
         }
       }
     },
+    mounted: function () {
+      this.thisValue = this.value || this.$el.innerText
+    },
     methods: {
       selectValue: function () {
-        this.$parent.setValue(this.value, this.$el.innerText)
+        this.$parent.setValue(this.thisValue, this.$el.innerText)
       }
     }
   })
@@ -127,13 +135,15 @@ import html from './select.html'
       setValue: function (val, text) {
         // 多项
         var i = -1
+        var values = this.value
         if (this.multiple) {
-          i = this.value.indexOf(val)
+          i = this.findIndex(val, values)
           if (i > -1) {
-            this.value.splice(i, 1)
+            values.splice(i, 1)
+          } else {
+            values.push(val)
           }
-          this.inputValue = this.value.join(',')
-          val = this.value
+          val = values
         // 单项
         } else {
           this.inputValue = text

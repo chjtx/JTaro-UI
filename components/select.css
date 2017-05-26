@@ -63,7 +63,7 @@ ul.j-select-ul li {
   border-bottom-color: transparent;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
-  top: 5px;
+  top: 7px;
 }
 .j-select-more-down {
   position: absolute;
@@ -75,5 +75,5 @@ ul.j-select-ul li {
   border-left-color: transparent;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
-  bottom: 5px;
+  bottom: 7px;
 }

@@ -280,11 +280,23 @@ var loader = new Loader({
 
 ### j-select
 
+支持单选、多选、可省略value
+
 ```html
 <j-select v-model="value" multiple>
   <j-options value="1">选项一</j-options>
   <j-options value="2">选项二</j-options>
   <j-options value="3">选项三</j-options>
+</j-select>
+```
+
+省略value
+
+```html
+<j-select v-model="value">
+  <j-options>选项一</j-options>
+  <j-options>选项二</j-options>
+  <j-options>选项三</j-options>
 </j-select>
 ```
 

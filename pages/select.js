@@ -12,7 +12,7 @@ export default {
     return {
       value: '1',
       noValue: '',
-      valueMultiple: [1, 2]
+      valueMultiple: ['1', '2']
     }
   }
 }

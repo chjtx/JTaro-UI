@@ -5,6 +5,7 @@ ul.j-select-ul li {
     border-bottom: 1px solid #efefef;
     padding-left: 20px;
     font-size: 14px;
+    position: relative;
 }
 .j-select-jroll {
   position: absolute;
@@ -17,8 +18,8 @@ ul.j-select-ul li {
   height: 50%;
   -webkit-transform: translateY(100%);
   transform: translateY(100%);
-  -webkit-transition: transform 300ms;
-  transition: transform 300ms;
+  -webkit-transition: transform 200ms;
+  transition: transform 200ms;
 }
 .j-select-jroll.j-select-show {
   -webkit-transform: translateY(0);

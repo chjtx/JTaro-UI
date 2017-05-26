@@ -14,7 +14,7 @@ import html from './select.html'
         thisValue: this.value
       }
     },
-    template: '<li :class="css" :value="value" @click="selectValue"><slot></slot></li>',
+    template: '<li class="j-click-button" :class="css" :value="value" @click="selectValue"><slot></slot></li>',
     computed: {
       css: function () {
         var selected = this.$parent.multiple

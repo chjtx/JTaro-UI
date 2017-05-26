@@ -113,20 +113,26 @@ import html from './select.html'
       changeValue: function () {
         var children = this.$refs.options.children
         var tempArr = []
-        for (var i = 0, l = children.length; i < l; i++) {
-          // 多项
-          if (this.multiple) {
-            this.value.forEach(function (v) {
+        var i = 0
+        var l = children.length
+
+        // 多项
+        if (this.multiple) {
+          this.value.forEach(function (v) {
+            for (i = 0; i < l; i++) {
               if (String(v) === String(children[i].value)) {
                 tempArr.push(children[i].innerText)
               }
-            })
-            this.inputValue = tempArr.join(',')
+            }
+          })
+          this.inputValue = tempArr.join(',')
 
-          // 单项
-          } else {
+        // 单项
+        } else {
+          for (i = 0; i < l; i++) {
             if (this.value === String(children[i].value)) {
               this.inputValue = children[i].innerText
+              break
             }
           }
         }

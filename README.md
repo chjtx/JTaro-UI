@@ -282,12 +282,36 @@ var loader = new Loader({
 
 支持单选、多选、可省略value
 
+multiple 为多选标记，多选时value为数组，请保证数组里每一项都为字符串
+
 ```html
+<!-- 单选 -->
+<j-select v-model="value">
+  <j-options value="1">选项一</j-options>
+  <j-options value="2">选项二</j-options>
+  <j-options value="3">选项三</j-options>
+</j-select>
+
+<script>
+  return {
+    value: '1'
+  }
+</script>
+```
+
+```html
+<!-- 多选 -->
 <j-select v-model="value" multiple>
   <j-options value="1">选项一</j-options>
   <j-options value="2">选项二</j-options>
   <j-options value="3">选项三</j-options>
 </j-select>
+
+<script>
+  return {
+    value: ['1']
+  }
+</script>
 ```
 
 省略value

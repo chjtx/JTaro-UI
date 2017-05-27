@@ -85,9 +85,9 @@
   }
 </style>
 <div @click="click">
+  <div class="j-radio-unchecked" :class="{'j-radio-show': !checked}"></div>
   <div class="j-radio-checked j-border-primary" :class="{'j-radio-show': checked}">
     <div class="j-radio-checked-child j-bg-primary" ref="bgColor"></div>
   </div>
-  <div class="j-radio-unchecked" :class="{'j-radio-show': !checked}"></div>
   <div class="j-radio-label">{{ label }}</div>
 </div>

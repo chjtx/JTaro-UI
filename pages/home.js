@@ -53,7 +53,7 @@ export default {
           url: 'pages/select'
         }, {
           name: '单选（Radio）',
-          url: ''
+          url: 'pages/radio'
         }, {
           name: '复选（Checkbox）',
           url: ''

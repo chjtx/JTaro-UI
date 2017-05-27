@@ -1,0 +1,27 @@
+<style>
+  .demo-body {
+    padding: 15px;
+  }
+  .demo-radio {
+    display: block;
+    margin-top: 10px;
+  }
+  .demo-radio-title {
+    padding: 20px 0 0;
+  }
+</style>
+<div>
+  <DemoHeader title="单选" />
+
+  <j-body class="demo-body">
+    <div class="demo-radio-title">当前值：{{ value }}</div>
+    <j-radio v-model="value" label="单选 1" val="1" class="demo-radio" />
+    <j-radio v-model="value" label="单选 2" val="2" class="demo-radio" />
+    <j-radio v-model="value" label="单选 3" val="3" class="demo-radio" />
+
+    <div class="demo-radio-title">无默认值：{{ value2 }}</div>
+    <j-radio v-model="value2" label="另一组 1" val="1" class="demo-radio" />
+    <j-radio v-model="value2" label="另一组 2" val="2" class="demo-radio" />
+    <j-radio v-model="value2" label="另一组 3" val="3" class="demo-radio" />
+  </j-body>
+</div>

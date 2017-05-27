@@ -53,9 +53,7 @@
     transform-origin: center;
     -webkit-transform: scale(0);
     transform: scale(0);
-    animation:j-switch-animation 600ms;
-  }
-  .j-switch-ripple-show {
+    -webkit-animation:j-switch-animation 600ms;
     animation:j-switch-animation 600ms;
   }
   .j-switch-hidden {
@@ -63,6 +61,19 @@
   }
   .j-switch-disabled {
     color: #c3cbd6;
+  }
+  @-webkit-keyframes j-switch-animation {
+    0% {
+      -webkit-transform: scale(0);
+    }
+    50% {
+      -webkit-transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(1);
+      opacity: 0;
+    }
   }
   @keyframes j-switch-animation {
     0% {

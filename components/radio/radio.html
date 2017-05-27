@@ -1,0 +1,93 @@
+<style>
+  this {
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    position: relative;
+  }
+  .j-radio-checked {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    border-radius: 20px;
+    border: 2px solid;
+    -webkit-transition: transform 400ms;
+    transition: transform 400ms;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  .j-radio-checked-child {
+    width: 8px;
+    height: 8px;
+    border-radius: 8px;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+  }
+  .j-radio-unchecked {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    border-radius: 20px;
+    border: 2px solid #000;
+    -webkit-transition: transform 400ms;
+    transition: transform 400ms;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  .j-radio-show {
+    -webkit-transform: scale(1)!important;
+    transform: scale(1)!important;
+  }
+  .j-radio-label {
+    margin-left: 30px;
+  }
+  .j-radio-ripple {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    background: rgba(0, 0, 0, .05);
+    left: -10px;
+    top: -10px;
+    border-radius: 40px;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-animation:j-switch-animation 600ms;
+    animation:j-switch-animation 600ms;
+  }
+  @-webkit-keyframes j-switch-animation {
+    0% {
+      -webkit-transform: scale(0);
+    }
+    50% {
+      -webkit-transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(1);
+      opacity: 0;
+    }
+  }
+  @keyframes j-switch-animation {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0;
+    }
+  }
+</style>
+<div @click="click">
+  <div class="j-radio-checked j-border-primary" :class="{'j-radio-show': checked}">
+    <div class="j-radio-checked-child j-bg-primary" ref="bgColor"></div>
+  </div>
+  <div class="j-radio-unchecked" :class="{'j-radio-show': !checked}"></div>
+  <div class="j-radio-label">{{ label }}</div>
+</div>

@@ -19,7 +19,7 @@ var pHtml = `<style>
   }
 </style>
 <div>
-  <DemoHeader title="选择器" />
+  <DemoHeader title="输入标题" />
 
   <j-body class="demo-body">
 
@@ -42,9 +42,9 @@ export default {
 `
 
 var cHtml = `<style>
-this {
+  this {
 
-}
+  }
 </style>
 <div>
 

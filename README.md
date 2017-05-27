@@ -324,4 +324,14 @@ multiple 为多选标记，多选时value为数组，请保证数组里每一项
 </j-select>
 ```
 
+### j-radio
+
+`v-model`一样则为一组
+
+`v-model`的值为字符串
+
+```html
+<j-radio label="选项 1" v-model="value" val="1" disabled labelLeft/>
+<j-radio label="选项 2" v-model="value" val="2" />
+```
 

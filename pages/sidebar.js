@@ -1,4 +1,4 @@
-import '../components/sidebar.js'
+import '../components/sidebar/sidebar.js'
 import header from './parts/sub-page-header.js'
 import html from './sidebar.html'
 

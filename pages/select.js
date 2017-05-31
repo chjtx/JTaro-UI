@@ -1,6 +1,6 @@
 import html from './select.html'
-import '../components/select.js'
-import '../components/body.js'
+import '../components/select/select.js'
+import '../components/body/body.js'
 import header from './parts/sub-page-header.js'
 
 export default {

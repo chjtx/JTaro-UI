@@ -1,6 +1,6 @@
 /* global Vue */
-import './mask.js'
-import './button.js'
+import '../mask/mask.js'
+import '../button/button.js'
 import html from './dialog.html'
 
 (function (v) {

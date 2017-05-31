@@ -1,4 +1,4 @@
-import '../components/dialog.js'
+import '../components/dialog/dialog.js'
 import header from './parts/sub-page-header.js'
 import html from './dialog.html'
 

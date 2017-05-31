@@ -1,5 +1,5 @@
-import '../components/input.js'
-import '../components/body.js'
+import '../components/input/input.js'
+import '../components/body/body.js'
 import header from './parts/sub-page-header.js'
 import html from './input.html'
 import 'node@jroll-fixedinput/jroll-fixedinput.min.js'

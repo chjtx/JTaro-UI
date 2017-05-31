@@ -1,5 +1,5 @@
 /* global Vue JRoll */
-import './mask.js'
+import '../mask/mask.js'
 import './select.css'
 import html from './select.html'
 

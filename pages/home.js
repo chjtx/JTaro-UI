@@ -1,7 +1,7 @@
-import '../components/appbar.js'
-import '../components/button.js'
-import '../components/body.js'
-import '../components/sidebar.js'
+import '../components/appbar/appbar.js'
+import '../components/button/button.js'
+import '../components/body/body.js'
+import '../components/sidebar/sidebar.js'
 import html from './home.html'
 
 export default {

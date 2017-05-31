@@ -1,5 +1,5 @@
 import header from './parts/sub-page-header.js'
-import Toast from '../components/toast.js'
+import Toast from '../components/toast/toast.js'
 import html from './toast.html'
 
 export default {

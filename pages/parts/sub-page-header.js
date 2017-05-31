@@ -1,6 +1,6 @@
 import html from './sub-page-header.html'
-import '../../components/appbar.js'
-import '../../components/button.js'
+import '../../components/appbar/appbar.js'
+import '../../components/button/button.js'
 
 export default {
   props: ['title'],

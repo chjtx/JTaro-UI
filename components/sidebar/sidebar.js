@@ -1,5 +1,5 @@
 /* global Vue */
-import './mask.js'
+import '../mask/mask.js'
 import html from './sidebar.html'
 
 (function (v) {

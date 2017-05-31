@@ -29,7 +29,7 @@ var pHtml = `<style>
 
 // page页面js模板内容
 var pJs = `import '../components/${name}/${name}.js'
-import '../components/body.js'
+import '../components/body/body.js'
 import header from './parts/sub-page-header.js'
 import html from './${name}.html'
 

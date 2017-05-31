@@ -17,11 +17,13 @@
     <div class="demo-radio-title">当前值：{{ value }}</div>
     <j-radio v-model="value" label="单选 1" val="1" class="demo-radio" />
     <j-radio v-model="value" label="单选 2" val="2" class="demo-radio" />
-    <j-radio v-model="value" label="单选 3" val="3" class="demo-radio" />
 
     <div class="demo-radio-title">无默认值：{{ value2 }}</div>
     <j-radio v-model="value2" label="另一组 1" val="1" class="demo-radio" />
     <j-radio v-model="value2" label="另一组 2" val="2" class="demo-radio" />
-    <j-radio v-model="value2" label="另一组 3" val="3" class="demo-radio" />
+
+    <div class="demo-radio-title">不可用：</div>
+    <j-radio v-model="value3" label="已选中不可用" val="1" class="demo-radio" disabled/>
+    <j-radio label="未选中不可用" class="demo-radio" disabled/>
   </j-body>
 </div>

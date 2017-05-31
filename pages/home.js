@@ -56,7 +56,7 @@ export default {
           url: 'pages/radio'
         }, {
           name: '复选（Checkbox）',
-          url: ''
+          url: 'pages/checkbox'
         }, {
           name: '加减器（Number Box）',
           url: ''

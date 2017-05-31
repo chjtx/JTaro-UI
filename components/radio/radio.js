@@ -6,7 +6,9 @@ import html from './radio.html'
     props: {
       'label': String,
       'value': String,
-      'val': String
+      'val': String,
+      'disabled': Boolean,
+      'labelLeft': Boolean
     },
     template: html,
     mounted: function () {
@@ -20,11 +22,13 @@ import html from './radio.html'
     },
     computed: {
       'checked': function () {
-        return this.val === this.value
+        return this.value && this.val === this.value
       }
     },
     methods: {
       'click': function () {
+        if (this.disabled) return
+
         this.$emit('input', this.val)
 
         var div = document.createElement('div')

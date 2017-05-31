@@ -35,6 +35,13 @@
     -webkit-transform: scale(0);
     transform: scale(0);
   }
+  .j-radio-disabled {
+    border-color: #c3cbd6!important;
+    color: #c3cbd6!important;
+  }
+  .j-radio-disabled>.j-radio-checked-child {
+    background: #c3cbd6!important;
+  }
   .j-radio-show {
     -webkit-transform: scale(1)!important;
     transform: scale(1)!important;
@@ -85,9 +92,9 @@
   }
 </style>
 <div @click="click">
-  <div class="j-radio-unchecked" :class="{'j-radio-show': !checked}"></div>
-  <div class="j-radio-checked j-border-primary" :class="{'j-radio-show': checked}">
+  <div class="j-radio-unchecked" :class="{'j-radio-show': !checked, 'j-radio-disabled': disabled}"></div>
+  <div class="j-radio-checked j-border-primary" :class="{'j-radio-show': checked, 'j-radio-disabled': disabled}">
     <div class="j-radio-checked-child j-bg-primary" ref="bgColor"></div>
   </div>
-  <div class="j-radio-label">{{ label }}</div>
+  <div class="j-radio-label" :class="{'j-radio-disabled': disabled}">{{ label }}</div>
 </div>

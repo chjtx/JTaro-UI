@@ -7,8 +7,7 @@ import html from './radio.html'
       'label': String,
       'value': String,
       'val': String,
-      'disabled': Boolean,
-      'labelLeft': Boolean
+      'disabled': Boolean
     },
     template: html,
     mounted: function () {

@@ -7,5 +7,12 @@ export default {
   template: html,
   components: {
     'DemoHeader': header
+  },
+  data: function () {
+    return {
+      value: ['1'],
+      value2: [],
+      value3: ['1']
+    }
   }
 }

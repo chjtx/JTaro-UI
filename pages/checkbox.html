@@ -2,11 +2,28 @@
   .demo-body {
     padding: 15px;
   }
+  .demo-checkbox {
+    display: block;
+    margin-top: 10px;
+  }
+  .demo-checkbox-title {
+    padding: 20px 0 0;
+  }
 </style>
 <div>
-  <DemoHeader title="输入标题" />
+  <DemoHeader title="复选" />
 
   <j-body class="demo-body">
+    <div class="demo-checkbox-title">当前值：{{ value }}</div>
+    <j-checkbox v-model="value" label="复选 1" val="1" class="demo-checkbox" />
+    <j-checkbox v-model="value" label="复选 2" val="2" class="demo-checkbox" />
 
+    <div class="demo-checkbox-title">无默认值：{{ value2 }}</div>
+    <j-checkbox v-model="value2" label="另一组 1" val="1" class="demo-checkbox" />
+    <j-checkbox v-model="value2" label="另一组 2" val="2" class="demo-checkbox" />
+
+    <div class="demo-checkbox-title">不可用：</div>
+    <j-checkbox v-model="value3" label="已选中不可用" val="1" class="demo-checkbox" disabled/>
+    <j-checkbox label="未选中不可用" class="demo-checkbox" disabled/>
   </j-body>
 </div>

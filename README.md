@@ -326,12 +326,48 @@ multiple 为多选标记，多选时value为数组，请保证数组里每一项
 
 ### j-radio
 
-`v-model`一样则为一组
+相同`v-model`为一组
 
 `v-model`的值为字符串
 
 ```html
 <j-radio label="选项 1" v-model="value" val="1" disabled/>
 <j-radio label="选项 2" v-model="value" val="2" />
+```
+
+### j-checkbox
+
+相同`v-model`为一组
+
+`v-model`的值为数组，数组元素为字符串
+
+```html
+<j-checkbox label="选项 1" v-model="value" val="1" disabled/>
+<j-checkbox label="选项 2" v-model="value" val="2" />
+```
+
+### j-picker
+
+```html
+<j-picker v-model="value" val="address"/>
+
+<script>
+export default {
+  data: function () {
+    return {
+      value: ['广东', '广州', '天河'],
+      address: [{
+        name: '广东',
+        children: [{
+          name: '广州',
+          children: [{
+            name: '天河'
+          }]
+        }]
+      }]
+    }
+  }
+}
+</script>
 ```
 

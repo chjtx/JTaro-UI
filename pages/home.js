@@ -62,7 +62,7 @@ export default {
           url: ''
         }, {
           name: '捡选器（Picker）',
-          url: ''
+          url: 'pages/picker'
         }, {
           name: '范围滑块（Range）',
           url: ''

@@ -1,0 +1,46 @@
+.j-picker-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /*display: none;*/
+}
+.j-picker-box {
+  position: absolute;
+  bottom: 0;
+  height: 240px;
+  width: 100%;
+  left: 0;
+  background: #fff;
+  padding: 10px;
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+  -webkit-transition: transform 200ms;
+  transition: transform 200ms;
+}
+.j-picker-box.j-picker-show {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+.j-picker-jroll {
+  position: absolute;
+  top: 10px;
+  z-index: 9;
+  height: 100%;
+}
+.j-picker-jroll li {
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.j-picker-bar {
+  width: 100%;
+  height: 44px;
+  position: absolute;
+  left: 0;
+  top: 98px;
+  background: rgba(0, 0, 0, .1);
+}

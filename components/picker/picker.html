@@ -3,6 +3,15 @@
 
   }
 </style>
-<div>
-
+<div @click="showOptions">
+  <slot></slot>
+  <div class="j-picker-mask" ref="mask">
+    <j-mask :show="showing" @action="hideOptions"/>
+    <div class="j-picker-box" :class="cssObject">
+      <div class="j-picker-bar"></div>
+      <ul class="j-picker-jroll" v-for="(v, i) in value" :index="i" :style="styleObject(i)" ref="jroll">
+        <li v-for="c in datas[i]">{{ c.name }}</li>
+      </ul>
+    </div>
+  </div>
 </div>

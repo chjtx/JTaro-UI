@@ -349,7 +349,7 @@ multiple 为多选标记，多选时value为数组，请保证数组里每一项
 ### j-picker
 
 ```html
-<j-picker v-model="value" val="address"/>
+<j-picker v-model="value" val="address"/>{{value[0] + '/' + value[1] + '/' + value[2]}}</j-picker>
 
 <script>
 export default {

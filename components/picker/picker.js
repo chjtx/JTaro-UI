@@ -15,15 +15,18 @@ import html from './picker.html'
     },
     data: function () {
       return {
-        showing: this.show,
-        newValue: this.value
+        showing: this.show
       }
     },
     template: html,
     mounted: function () {
       var me = this
+
+      // 将组件稳到body下
       document.body.appendChild(this.$refs.mask)
+
       this.$refs.jroll.forEach(function (e) {
+        // 创建jroll实例
         var j = new JR(e.parentNode, { scroller: e, preventDefault: false })
         j.on('refresh', function () {
           var l = this.scroller.children.length
@@ -44,14 +47,35 @@ import html from './picker.html'
           }
           this.scrollTo(0, s, 100, false, function () {
             // 获取值
-            var index = Math.abs((this.y - 88) / 44)
-            var value = this.scroller.children[index].innerText
-            me.newValue.splice(this.scroller.getAttribute('index'), 1, value)
-            me.$emit('input', me.newValue)
+            var pos = Math.abs((this.y - 88) / 44)
+            var value = this.scroller.children[pos].innerText
+            var newValue = me.value
+            var index = Number(this.scroller.getAttribute('index'))
+            var subValue = me.getSubValue(index, value)
+
+            newValue.splice(index, newValue.length, value)
+            me.$emit('input', newValue.concat(subValue))
+
+            // 重置子项的位置
+            me.$nextTick(function () {
+              for (var i = index + 1; i < me.$refs.jroll.length; i++) {
+                me.$refs.jroll[i].jroll.refresh().scrollTo(0, 88)
+              }
+            })
           }.bind(this))
         })
-        j.refresh()
+        j.refresh().scrollTo(0, 0)
       })
+
+      // 初始数值位置
+      for (var i = 0, l = me.value.length; i < l; i++) {
+        var children = me.$refs.jroll[i].children
+        for (var j = 0, k = children.length; j < k; j++) {
+          if (me.value[i] === children[j].innerText) {
+            me.$refs.jroll[i].jroll.scrollTo(0, 88 - j * 44)
+          }
+        }
+      }
     },
     computed: {
       cssObject: function () {
@@ -67,7 +91,12 @@ import html from './picker.html'
         for (var i = 0; i < l; i++) {
           arr.push(temp)
           selected = this.findSelected(this.value[i], temp)
-          if (selected) temp = selected.children
+          if (selected) {
+            temp = selected.children
+            if (!temp) break
+          } else {
+            break
+          }
         }
         return arr
       }
@@ -86,6 +115,22 @@ import html from './picker.html'
         setTimeout(function () {
           me.$refs.mask.style.display = 'none'
         }, 350)
+      },
+      getSubValue: function (index, value) {
+        var d = this.datas[index]
+        var a = []
+        var b = ''
+        for (var i = 0, l = d.length; i < l; i++) {
+          if (value === d[i].name) {
+            b = d[i]
+            break
+          }
+        }
+        while (b.children) {
+          a.push(b.children[0].name)
+          b = b.children[0]
+        }
+        return a
       },
       findSelected: function (is, arr) {
         return arr.filter(function (i) {

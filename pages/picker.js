@@ -10,7 +10,7 @@ export default {
   },
   data: function () {
     return {
-      value: ['广东1', '广州4', '天河4'],
+      value: ['广东1', '广州4', '天河4', '棠下'],
       address: [{
         name: '广东1',
         children: [{
@@ -66,10 +66,7 @@ export default {
       }, {
         name: '广东5',
         children: [{
-          name: '广州',
-          children: [{
-            name: '天河'
-          }]
+          name: '广州'
         }]
       }]
     }

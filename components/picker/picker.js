@@ -6,8 +6,18 @@ import html from './picker.html'
 (function (v, JR) {
   v.component('j-picker', {
     props: {
-      'value': Array,
-      'val': Array,
+      'value': {
+        type: Array,
+        required: true
+      },
+      'number': {
+        type: Number,
+        required: true
+      },
+      'val': {
+        type: Array,
+        required: true
+      },
       'show': {
         type: Boolean,
         default: false
@@ -30,7 +40,7 @@ import html from './picker.html'
         var j = new JR(e.parentNode, { scroller: e, preventDefault: false })
         j.on('refresh', function () {
           var l = this.scroller.children.length
-          this.maxScrollY = l > 4 ? -88 : 88
+          this.maxScrollY = l > 4 ? this.maxScrollY - 88 : 88 - (l - 1) * 44
           this.minScrollY = 88
         })
         j.on('scrollEnd', function () {
@@ -52,14 +62,23 @@ import html from './picker.html'
             var newValue = me.value
             var index = Number(this.scroller.getAttribute('index'))
             var subValue = me.getSubValue(index, value)
+            var selectedDom = this.scroller.querySelector('.j-color-primary')
+            if (selectedDom) selectedDom.classList.remove('j-color-primary')
+            this.scroller.children[pos].classList.add('j-color-primary')
 
             newValue.splice(index, newValue.length, value)
             me.$emit('input', newValue.concat(subValue))
 
             // 重置子项的位置
             me.$nextTick(function () {
-              for (var i = index + 1; i < me.$refs.jroll.length; i++) {
-                me.$refs.jroll[i].jroll.refresh().scrollTo(0, 88)
+              var jrolls = me.$refs.jroll
+              for (var i = index + 1; i < jrolls.length; i++) {
+                jrolls[i].jroll.refresh().scrollTo(0, 88)
+                var selectedDom = jrolls[i].querySelector('.j-color-primary')
+                if (selectedDom) selectedDom.classList.remove('j-color-primary')
+                if (jrolls[i].children.length) {
+                  jrolls[i].children[0].classList.add('j-color-primary')
+                }
               }
             })
           }.bind(this))
@@ -68,11 +87,12 @@ import html from './picker.html'
       })
 
       // 初始数值位置
-      for (var i = 0, l = me.value.length; i < l; i++) {
+      for (var i = 0; i < me.number; i++) {
         var children = me.$refs.jroll[i].children
         for (var j = 0, k = children.length; j < k; j++) {
           if (me.value[i] === children[j].innerText) {
-            me.$refs.jroll[i].jroll.scrollTo(0, 88 - j * 44)
+            children[j].classList.add('j-color-primary')
+            me.$refs.jroll[i].jroll.scrollTo(0, 88 - j * 44, 0, true)
           }
         }
       }
@@ -107,6 +127,13 @@ import html from './picker.html'
         this.$refs.mask.style.display = 'block'
         setTimeout(function () {
           me.showing = true
+
+          // 视图渲染完成刷新jroll确保滑动正常
+          setTimeout(function () {
+            me.$refs.jroll.forEach(function (j) {
+              j.jroll.refresh()
+            })
+          }, 100)
         }, 4)
       },
       hideOptions: function () {
@@ -139,8 +166,8 @@ import html from './picker.html'
       },
       styleObject: function (i) {
         return {
-          width: (100 / this.value.length) + '%',
-          left: i * (100 / this.value.length) + '%'
+          width: (100 / this.number) + '%',
+          left: i * (100 / this.number) + '%'
         }
       }
     }

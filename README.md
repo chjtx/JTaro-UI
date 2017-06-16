@@ -348,8 +348,17 @@ multiple 为多选标记，多选时value为数组，请保证数组里每一项
 
 ### j-picker
 
+属性
+
+| 名称 | 默认值 | 必填 | 说明 |
+| :--: | :--: | :--:| :--- |
+| v-model | -- | Y | 相当于表单的value，不能为空数组|
+| :val | -- | Y | 数据 |
+| :number | -- | Y | 要显示的列数 |
+| show | false | N | 是否默认显示选择器 |
+
 ```html
-<j-picker v-model="value" val="address"/>{{value[0] + '/' + value[1] + '/' + value[2]}}</j-picker>
+<j-picker v-model="value" :val="address" :number="3"/>{{value[0] + '/' + value[1] + '/' + value[2]}}</j-picker>
 
 <script>
 export default {

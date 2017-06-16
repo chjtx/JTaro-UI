@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  /*display: none;*/
+  display: none;
 }
 .j-picker-box {
   position: absolute;
@@ -27,7 +27,6 @@
   position: absolute;
   top: 10px;
   z-index: 9;
-  height: 100%;
 }
 .j-picker-jroll li {
   height: 44px;
@@ -35,6 +34,7 @@
   text-align: center;
   overflow-x: auto;
   white-space: nowrap;
+  margin: 0 5px;
 }
 .j-picker-bar {
   width: 100%;

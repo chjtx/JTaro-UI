@@ -4,8 +4,8 @@
     <j-mask :show="showing" @action="hideOptions"/>
     <div class="j-picker-box" :class="cssObject">
       <div class="j-picker-bar"></div>
-      <ul class="j-picker-jroll" v-for="(v, i) in value" :index="i" :style="styleObject(i)" ref="jroll">
-        <li v-for="c in datas[i]">{{ c.name }}</li>
+      <ul class="j-picker-jroll" v-for="i in number" :index="i - 1" :style="styleObject(i - 1)" ref="jroll">
+        <li v-for="c in datas[i - 1]">{{ c.name }}</li>
       </ul>
     </div>
   </div>

@@ -1,0 +1,32 @@
+<style>
+  this {
+    display: inline-block;
+    height: 36px;
+  }
+  .j-number-left {
+    display: block;
+    float: left;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .j-number-value {
+    height: 36px;
+    width: 70px;
+    float: left;
+    text-align: center;
+    line-height: 36px;
+    border-top: 1px solid #d7dde4;
+    border-bottom: 1px solid #d7dde4;
+  }
+  .j-number-right {
+    display: block;
+    float: left;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+</style>
+<div>
+  <j-button class="j-number-left" width="36" height="36" type="disabled">-</j-button>
+  <div class="j-number-value">{{ value }}</div>
+  <j-button @action="plus" class="j-number-right" width="36" height="36" type="theme">+</j-button>
+</div>

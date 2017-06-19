@@ -58,8 +58,8 @@ export default {
           name: '复选（Checkbox）',
           url: 'pages/checkbox'
         }, {
-          name: '加减器（Number Box）',
-          url: ''
+          name: '加减器（Number）',
+          url: 'pages/number'
         }, {
           name: '捡选器（Picker）',
           url: 'pages/picker'
@@ -86,9 +86,6 @@ export default {
           url: ''
         }, {
           name: '图片轮播（Swiper）',
-          url: ''
-        }, {
-          name: '省市区联动菜单（City Picker）',
           url: ''
         }, {
           name: '日历（Calendar）',

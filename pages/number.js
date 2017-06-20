@@ -10,7 +10,8 @@ export default {
   },
   data: function () {
     return {
-      'value': 1
+      'value': 1,
+      'value2': 0
     }
   }
 }

@@ -7,6 +7,13 @@
   <DemoHeader title="加减器" />
 
   <j-body class="demo-body">
+    <p>默认最小0，最大99999</p>
     <j-number v-model="value" />
+
+    <br>
+    <br>
+
+    <p>自定义最小10，最大20</p>
+    <j-number v-model="value2" max="20" min="10" />
   </j-body>
 </div>

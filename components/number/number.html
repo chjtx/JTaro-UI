@@ -26,7 +26,7 @@
   }
 </style>
 <div>
-  <j-button class="j-number-left" width="36" height="36" type="disabled">-</j-button>
-  <div class="j-number-value">{{ value }}</div>
-  <j-button @action="plus" class="j-number-right" width="36" height="36" type="theme">+</j-button>
+  <j-button @action="minus" class="j-number-left" width="36" height="36" :type="minType">-</j-button>
+  <div @click="calculator" class="j-number-value">{{ value }}</div>
+  <j-button @action="plus" class="j-number-right" width="36" height="36" :type="maxType">+</j-button>
 </div>

@@ -1,0 +1,19 @@
+<style>
+  .demo-body {
+    padding: 15px;
+  }
+</style>
+<div>
+  <DemoHeader title="范围滑块" />
+
+  <j-body class="demo-body">
+    <p>默认50，最大值为100：{{ value }} %</p>
+    <j-slider v-model="value" />
+
+    <br>
+    <br>
+
+    <p>默认值0，最大值10：{{ value2 }}</p>
+    <j-slider v-model="value2" max="10"/>
+  </j-body>
+</div>

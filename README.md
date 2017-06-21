@@ -380,3 +380,9 @@ export default {
 </script>
 ```
 
+### j-range
+
+```html
+<j-range v-model="value" />
+```
+

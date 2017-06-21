@@ -2,11 +2,18 @@
   .demo-body {
     padding: 15px;
   }
+  .demo-picker {
+    padding: 4px 10px;
+    background: #ddd;
+    border-radius: 2px;
+    margin-top: 10px;
+  }
 </style>
 <div>
   <DemoHeader title="捡选器" />
 
   <j-body class="demo-body">
-    <j-picker v-model="value" :val="address" :number="3">{{value[0] + '/' + value[1] + '/' + value[2]}}</j-picker>
+    <p>本示例北京和广东两个地区选项比较全</p>
+    <j-picker class="demo-picker" v-model="value" :val="address" :number="3">{{value[0] + '/' + value[1] + '/' + value[2]}}</j-picker>
   </j-body>
 </div>

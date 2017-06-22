@@ -1,0 +1,66 @@
+/* color */
+/* 主题背景颜色 参考 material design color */
+.j-bg-weaken {
+  background: #f48fb1!important; /* 200 */
+}
+.j-bg-primary {
+  background: #e91e63!important; /* 500 */
+}
+.j-bg-deepen {
+  background: #ad1457!important; /* 800 */
+}
+
+/* 一般背景颜色 */
+.j-bg-gray {
+  background: #EEEEEE!important;
+}
+.j-bg-dark-gray {
+  background: #BDBDBD!important;
+}
+
+/* 与背景色相辅的字体颜色 */
+.j-font-primary {
+  color: #fff!important;
+}
+.j-font-second {
+  color: #fce4ec!important; /* 50 */
+}
+
+/* 主题文本颜色 */
+.j-color-weaken {
+  color: #f48fb1!important;
+}
+.j-color-primary {
+  color: #e91e63!important;
+}
+.j-color-deepen {
+  color: #ad1457!important;
+}
+
+/* 一般文本颜色 */
+.j-text-weakest {
+  color: #E0E0E0!important;
+}
+.j-text-weaken {
+  color: #9E9E9E!important;
+}
+.j-text-second {
+  color: #424242!important;
+}
+.j-text-primary {
+  color: #212121!important;
+}
+.j-text-deepen {
+  color: #000!important;
+}
+
+/* 边框颜色 */
+.j-border-weaken {
+  border-color: #f48fb1!important;
+}
+.j-border-primary {
+  border-color: #e91e63!important;
+}
+.j-border-deepen {
+  border-color: #ad1457!important;
+}

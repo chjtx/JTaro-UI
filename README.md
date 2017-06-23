@@ -380,11 +380,11 @@ export default {
 </script>
 ```
 
-### j-range
+### j-slider
 
 ```html
-<j-range v-model="value" max="10"/>
+<j-slider v-model="value" max="10"/>
 
-<j-range v-model="value" disabled/>
+<j-slider v-model="value" disabled/>
 ```
 

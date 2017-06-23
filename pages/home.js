@@ -64,7 +64,7 @@ export default {
           name: '捡选器（Picker）',
           url: 'pages/picker'
         }, {
-          name: '范围滑块（Slider）',
+          name: '滑块（Slider）',
           url: 'pages/slider'
         }, {
           name: '搜索框（Search Box）',

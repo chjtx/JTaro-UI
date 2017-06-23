@@ -28,9 +28,18 @@
     width: 10px;
     height: 4px;
   }
+  .j-slider-disabled {
+    background: #c3cbd6;
+  }
+  .j-slider-disabled-border {
+    border-color: #c3cbd6;
+  }
+  .j-slider-disabled-weaken {
+    background: #d7dde4;
+  }
 </style>
 <div>
-  <div class="j-slider-axis j-bg-weaken" ref="axis"></div>
-  <div class="j-slider-real j-bg-primary" ref="real"></div>
-  <div class="j-slider-button j-border-primary" :class="cssObject" ref="jroll"></div>
+  <div class="j-slider-axis" :class="axisObject" ref="axis"></div>
+  <div class="j-slider-real" :class="realObject" ref="real"></div>
+  <div class="j-slider-button" :class="cssObject" ref="jroll"></div>
 </div>

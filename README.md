@@ -383,6 +383,8 @@ export default {
 ### j-range
 
 ```html
-<j-range v-model="value" />
+<j-range v-model="value" max="10"/>
+
+<j-range v-model="value" disabled/>
 ```
 

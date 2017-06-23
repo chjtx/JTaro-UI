@@ -11,7 +11,8 @@ export default {
   data: function () {
     return {
       value: 50,
-      value2: 0
+      value2: 0,
+      value3: 20
     }
   }
 }

@@ -67,11 +67,8 @@ export default {
           name: '滑块（Slider）',
           url: 'pages/slider'
         }, {
-          name: '搜索框（Search Box）',
-          url: ''
-        }, {
           name: '操作表（Action Sheet）',
-          url: ''
+          url: 'pages/sheet'
         }, {
           name: '日期选择器（Datetime）',
           url: ''

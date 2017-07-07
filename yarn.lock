@@ -889,9 +889,9 @@ jroll-fixedinput@^1.2.3:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/jroll-fixedinput/-/jroll-fixedinput-1.2.3.tgz#8adc93739433419349262a78454c3ee6d39fa48c"
 
-jroll@^2.4.10, jroll@^2.4.5:
-  version "2.4.10"
-  resolved "https://registry.yarnpkg.com/jroll/-/jroll-2.4.10.tgz#99125accf6dba70e2e139d241d45dd7315beec53"
+jroll@^2.4.12, jroll@^2.4.5:
+  version "2.4.12"
+  resolved "https://registry.yarnpkg.com/jroll/-/jroll-2.4.12.tgz#866519c4056b23b270b7e56682f784e6d5f8a944"
 
 js-tokens@^3.0.0:
   version "3.0.1"
@@ -946,9 +946,9 @@ jtaro-bundle@^0.2.5:
     rollup "^0.41.4"
     rollup-plugin-jtaro-module "^0.2.0"
 
-jtaro-module@^0.2.4:
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/jtaro-module/-/jtaro-module-0.2.4.tgz#a89d662b8949b544714359d72a41f8add1216ac9"
+jtaro-module@^0.2.6:
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/jtaro-module/-/jtaro-module-0.2.6.tgz#2ad86b5e24a8b0462378e8f791445b892620367b"
 
 jtaro@^0.5.0:
   version "0.5.0"
@@ -1402,6 +1402,10 @@ vue-template-es2015-compiler@^1.5.0:
 vue@^2.2.1:
   version "2.2.6"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.2.6.tgz#451714b394dd6d4eae7b773c40c2034a59621aed"
+
+vue@^2.3.4:
+  version "2.3.4"
+  resolved "https://registry.yarnpkg.com/vue/-/vue-2.3.4.tgz#5ec3b87a191da8090bbef56b7cfabd4158038171"
 
 window-size@0.1.0:
   version "0.1.0"

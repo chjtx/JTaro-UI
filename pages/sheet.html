@@ -1,0 +1,14 @@
+<style>
+  .demo-body {
+    padding: 15px;
+  }
+</style>
+<div>
+  <DemoHeader title="输入标题" />
+
+  <j-body class="demo-body">
+    <j-button width="100%" @action="action">打开操作表</j-button>
+  </j-body>
+
+  <j-sheet @action="fun" :show="show" :menus="menus"/>
+</div>

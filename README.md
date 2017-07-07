@@ -388,3 +388,31 @@ export default {
 <j-slider v-model="value" disabled/>
 ```
 
+### j-sheet
+
+```html
+<j-sheet @action="fun" :show="show" :menus="menus"/>
+```
+
+```js
+export default {
+  data: function () {
+    return {
+      show: false,
+      menus: ['操作一', '操作二']
+    }
+  },
+  methods: {
+    fun: function (index) {
+      switch (index) {
+        case 0: this.action1()
+          break
+        case 1: this.action2()
+      }
+    },
+    action1: function () {},
+    action2: function () {}
+  }
+}
+```
+

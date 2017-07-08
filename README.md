@@ -346,6 +346,14 @@ multiple 为多选标记，多选时value为数组，请保证数组里每一项
 <j-checkbox label="选项 2" v-model="value" val="2" />
 ```
 
+### j-number
+
+加减器
+
+```html
+<j-number v-model="value" max="20" min="10" />
+```
+
 ### j-picker
 
 属性

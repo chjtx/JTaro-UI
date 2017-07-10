@@ -70,7 +70,10 @@ export default {
           name: '操作表（Action Sheet）',
           url: 'pages/sheet'
         }, {
-          name: '日期选择器（Datetime）',
+          name: '日期选择器（Date Picker）',
+          url: 'pages/datepicker'
+        }, {
+          name: '日间选择器（Time Picker）',
           url: ''
         }]
       }, {

@@ -413,13 +413,22 @@ export default {
   methods: {
     fun: function (index) {
       switch (index) {
+        case -1: this.clickMask()
+          break
         case 0: this.action1()
           break
         case 1: this.action2()
       }
     },
-    action1: function () {},
-    action2: function () {}
+    clickMask: function () {
+      // 点击了遮罩层
+    },
+    action1: function () {
+      // 点击了按钮一
+    },
+    action2: function () {
+      // 点击了按钮一
+    }
   }
 }
 ```

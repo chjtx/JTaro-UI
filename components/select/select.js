@@ -106,6 +106,7 @@ import html from './select.html'
       hideOptions: function () {
         var me = this
         this.showing = false
+        this.$emit('i')
         setTimeout(function () {
           me.$refs.mask.style.display = 'none'
         }, 350)

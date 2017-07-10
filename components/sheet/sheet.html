@@ -7,10 +7,30 @@
     height: 100%;
     display: none;
   }
+  ul {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+    line-height: 48px;
+    text-align: center;
+    -webkit-transform: translate(0px, 100%);
+    transform: translate(0px, 100%);
+    -webkit-transition: transform 200ms;
+    transition: transform 200ms;
+  }
+  ul.j-sheet-show {
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+  }
+  li {
+    border-bottom: 1px solid #ddd;
+  }
 </style>
 <div>
-  <j-mask :show="showing" @action="hideOptions"/>
-  <ul>
-    <li class="j-click-button" @click="a(i)" v-for="(m, i) in menus">{{ m }}</li>
+  <j-mask :show="showing" @action="action(-1)"/>
+  <ul :class="cssObject">
+    <li class="j-click-button" @click="action(i)" v-for="(m, i) in menus">{{ m }}</li>
   </ul>
 </div>

@@ -21,7 +21,17 @@ import html from './sheet.html'
         this.$el.style.display = 'block'
       }
     },
+    computed: {
+      cssObject: function () {
+        return {
+          'j-sheet-show': this.showing
+        }
+      }
+    },
     methods: {
+      action: function (index) {
+        this.$emit('action', index)
+      },
       showOptions: function () {
         var me = this
         this.$el.style.display = 'block'

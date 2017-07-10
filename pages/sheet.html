@@ -11,4 +11,14 @@
   </j-body>
 
   <j-sheet @action="fun" :show="show" :menus="menus"/>
+
+  <j-dialog :show="show1" @action="clickDialog" :buttons="buttons">
+    <div slot="title">提示</div>
+    <div slot="content">点击了 操作一</div>
+  </j-dialog>
+
+  <j-dialog :show="show2" @action="clickDialog" :buttons="buttons">
+    <div slot="title">提示</div>
+    <div slot="content">点击了 操作二</div>
+  </j-dialog>
 </div>

@@ -946,9 +946,9 @@ jtaro-bundle@^0.3.0:
     rollup "^0.41.4"
     rollup-plugin-jtaro-module "^0.2.0"
 
-jtaro-module@^0.2.6:
-  version "0.2.6"
-  resolved "https://registry.yarnpkg.com/jtaro-module/-/jtaro-module-0.2.6.tgz#2ad86b5e24a8b0462378e8f791445b892620367b"
+jtaro-module@^0.2.7:
+  version "0.2.7"
+  resolved "https://registry.yarnpkg.com/jtaro-module/-/jtaro-module-0.2.7.tgz#30650029aef704fcea2f6ea31c9317829400c4ab"
 
 jtaro@^0.5.0:
   version "0.5.0"

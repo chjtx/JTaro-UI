@@ -7,5 +7,10 @@ export default {
   template: html,
   components: {
     'DemoHeader': header
+  },
+  data: function () {
+    return {
+      value: ''
+    }
   }
 }

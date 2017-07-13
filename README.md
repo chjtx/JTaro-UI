@@ -433,3 +433,12 @@ export default {
 }
 ```
 
+### j-datepicker
+
+value的值为字符串，可为空字符串`''`或`yyyy-mm-dd`格式的字符串，例：`2017-07-13`
+
+yyyy的值最小为1950，最大为2050
+
+```html
+<j-datepicker v-model="value" />
+```

@@ -13,8 +13,9 @@ import picker from './datepicker.set.js'
       if (this.value === '') {
         this.$emit('input', this.format(new Date()))
       }
-
-      picker.show(this.value, this.setValue)
+      this.$nextTick(function () {
+        picker.show(this.value, this.setValue)
+      })
     },
     methods: {
       showDatePicker: function () {
@@ -24,8 +25,8 @@ import picker from './datepicker.set.js'
         return d.getFullYear() + '-' + String(d.getMonth() + 1).replace(/^(\d)$/, '0$1') +
           '-' + String(d.getDate()).replace(/^(\d)$/, '0$1')
       },
-      setValue: function () {
-
+      setValue: function (val) {
+        this.$emit('input', val)
       }
     }
   })

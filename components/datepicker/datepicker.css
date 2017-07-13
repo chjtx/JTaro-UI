@@ -81,3 +81,11 @@
   height: 44px;
   line-height: 44px;
 }
+.j-datepicker-bar {
+    width: 100%;
+    height: 44px;
+    position: absolute;
+    left: 0;
+    top: 142px;
+    background: rgba(0, 0, 0, .1);
+}

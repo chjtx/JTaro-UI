@@ -73,8 +73,8 @@ export default {
           name: '日期选择器（Date Picker）',
           url: 'pages/datepicker'
         }, {
-          name: '日间选择器（Time Picker）',
-          url: ''
+          name: '时间选择器（Time Picker）',
+          url: 'pages/timepicker'
         }]
       }, {
         type: '其它组件',

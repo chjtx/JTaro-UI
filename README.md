@@ -442,3 +442,9 @@ yyyy的值最小为1950，最大为2050
 ```html
 <j-datepicker v-model="value" />
 ```
+
+### j-timepicker
+
+```html
+<j-timepicker v-model="value" />
+```

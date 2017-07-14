@@ -13,9 +13,6 @@ import picker from './datepicker.set.js'
       if (this.value === '') {
         this.$emit('input', this.format(new Date()))
       }
-      this.$nextTick(function () {
-        picker.show(this.value, this.setValue)
-      })
     },
     methods: {
       showDatePicker: function () {

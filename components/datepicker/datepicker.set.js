@@ -192,6 +192,16 @@ function infiniteLoop (me, pos, flag) {
   })
 }
 
+// 获取当前值的位置，提供给jroll对象（负数）
+function getCurrentPosition (children, val) {
+  for (var i = 0, l = children.length; i < l; i++) {
+    if (children[i].innerText === val) {
+      return (i - 2) * -44
+    }
+  }
+  return 0
+}
+
 var picker = {
   init: function (y, m, d) { // year, month, date
     var me = this
@@ -297,10 +307,13 @@ var picker = {
       me.init(year, month, date)
     } else {
       // 年
+      jrollYear.y = getCurrentPosition(jrollYear.scroller.children, year)
       infiniteLoop(jrollYear, -47 * 44, 'y')
       // 月
+      jrollMonth.y = getCurrentPosition(jrollMonth.scroller.children, month.replace(/^0/, ''))
       infiniteLoop(jrollMonth, -9 * 44, 'm')
       // 日
+      jrollDate.y = getCurrentPosition(jrollDate.scroller.children, date.replace(/^0/, ''))
       infiniteLoop(jrollDate, -11 * 44, 'd')
     }
     wrap.style.display = 'block'

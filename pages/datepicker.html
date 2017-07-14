@@ -2,13 +2,18 @@
   .demo-body {
     padding: 15px;
   }
+  .margin {
+    margin-bottom: 20px;
+  }
 </style>
 <div>
   <DemoHeader title="日期选择器" />
 
   <j-body class="demo-body">
     
-    <j-datepicker v-model="value" />
+    <j-datepicker class="margin" v-model="value" />
+    <j-datepicker class="margin" v-model="value2" />
+    <j-datepicker class="margin" v-model="value3" />
 
   </j-body>
 </div>

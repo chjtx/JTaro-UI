@@ -10,7 +10,9 @@ export default {
   },
   data: function () {
     return {
-      value: ''
+      value: '',
+      value2: '2047-09-02',
+      value3: '1966-08-31'
     }
   }
 }

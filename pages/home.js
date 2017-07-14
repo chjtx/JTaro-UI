@@ -67,7 +67,7 @@ export default {
           name: '滑块（Slider）',
           url: 'pages/slider'
         }, {
-          name: '操作表（Action Sheet）',
+          name: '操作列表（Action Sheet）',
           url: 'pages/sheet'
         }, {
           name: '日期选择器（Date Picker）',

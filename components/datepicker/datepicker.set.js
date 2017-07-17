@@ -306,15 +306,15 @@ var picker = {
     if (!wrap) {
       me.init(year, month, date)
     } else {
+      // 日，先设置日解决设置月时自动修改日发生的错误
+      jrollDate.y = getCurrentPosition(jrollDate.scroller.children, date.replace(/^0/, ''))
+      infiniteLoop(jrollDate, -11 * 44, 'd')
       // 年
       jrollYear.y = getCurrentPosition(jrollYear.scroller.children, year)
       infiniteLoop(jrollYear, -47 * 44, 'y')
       // 月
       jrollMonth.y = getCurrentPosition(jrollMonth.scroller.children, month.replace(/^0/, ''))
       infiniteLoop(jrollMonth, -9 * 44, 'm')
-      // 日
-      jrollDate.y = getCurrentPosition(jrollDate.scroller.children, date.replace(/^0/, ''))
-      infiniteLoop(jrollDate, -11 * 44, 'd')
     }
     wrap.style.display = 'block'
     setTimeout(function () {

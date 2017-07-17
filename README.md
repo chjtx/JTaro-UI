@@ -17,7 +17,7 @@ http://www.chjtx.com/JTaro-UI/build/
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="initial-scale=1, user-scalable=0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
     <title>JTaro UI</title>
     <link rel="stylesheet" href="./src/jtaro-ui.css">
     <link rel="stylesheet" href="./src/jtaro-ui-iconfont.css">

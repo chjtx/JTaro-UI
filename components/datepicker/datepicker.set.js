@@ -94,7 +94,7 @@ function getDatesLi (dd) {
 }
 
 // 设置不可用的日期
-function setDateDisable (disDate) {
+function setDateDisable (disDate, noHandleDate) {
   for (var i = 0; i < 3; i++) {
     if (disDate.indexOf(specialDate[i].innerText) !== -1) {
       specialDate[i].classList.add('j-datepicker-disabled')
@@ -102,7 +102,9 @@ function setDateDisable (disDate) {
       specialDate[i].classList.remove('j-datepicker-disabled')
     }
   }
-  handleDate()
+  if (!noHandleDate) {
+    handleDate()
+  }
 }
 
 function setColor (scroller, index) {
@@ -114,27 +116,27 @@ function setColor (scroller, index) {
 }
 
 // 处理滑动年份
-function handleYear () {
+function handleYear (noHandleDate) {
   // 如果是闰年2月，那么2月29号置为可选择，否则只有28号可选
   if (month === '02') {
     if ((year % 100 === 0 && year % 400 === 0) || (year % 100 !== 0 && year % 4 === 0)) {
-      setDateDisable(['30', '31'])
+      setDateDisable(['30', '31'], noHandleDate)
     } else {
-      setDateDisable(['29', '30', '31'])
+      setDateDisable(['29', '30', '31'], noHandleDate)
     }
   }
   setColor(jrollYear.scroller, 49)
 }
 
 // 处理滑动月份
-function handleMonth () {
+function handleMonth (noHandleDate) {
   var m30 = ['04', '06', '09', '11']
   if (month === '02') {
-    handleYear()
+    handleYear(noHandleDate)
   } else if (m30.indexOf(month) !== -1) {
-    setDateDisable(['31'])
+    setDateDisable(['31'], noHandleDate)
   } else {
-    setDateDisable([])
+    setDateDisable([], noHandleDate)
   }
   setColor(jrollMonth.scroller, 11)
 }
@@ -155,8 +157,14 @@ function handleDate () {
   infiniteLoop(jrollDate, -11 * 44, 'd')
 }
 
-// 移动元素位置实现无限循环
-function infiniteLoop (me, pos, flag) {
+/**
+ * 移动元素位置实现无限循环
+ * @param { Object } me JRoll实例
+ * @param { Number } pos 值的位置
+ * @param { String } flag 年月日标记
+ * @param { Boolen } noHandleDate 滑动年月时是否处理日
+ */
+function infiniteLoop (me, pos, flag, noHandleDate) {
   var y = Math.round(me.y / 44) * 44
   me.scrollTo(0, y, 100, true, function () {
     var cut = (me.y - pos) / 44
@@ -181,10 +189,10 @@ function infiniteLoop (me, pos, flag) {
     // 获取值
     switch (flag) {
       case 'y': year = me.scroller.children[49].innerText
-        handleYear()
+        handleYear(noHandleDate)
         break
       case 'm': month = pad0(me.scroller.children[11].innerText)
-        handleMonth()
+        handleMonth(noHandleDate)
         break
       case 'd': date = pad0(me.scroller.children[13].innerText)
         handleDate()
@@ -306,15 +314,15 @@ var picker = {
     if (!wrap) {
       me.init(year, month, date)
     } else {
-      // 日，先设置日解决设置月时自动修改日发生的错误
-      jrollDate.y = getCurrentPosition(jrollDate.scroller.children, date.replace(/^0/, ''))
-      infiniteLoop(jrollDate, -11 * 44, 'd')
       // 年
       jrollYear.y = getCurrentPosition(jrollYear.scroller.children, year)
-      infiniteLoop(jrollYear, -47 * 44, 'y')
+      infiniteLoop(jrollYear, -47 * 44, 'y', true)
       // 月
       jrollMonth.y = getCurrentPosition(jrollMonth.scroller.children, month.replace(/^0/, ''))
-      infiniteLoop(jrollMonth, -9 * 44, 'm')
+      infiniteLoop(jrollMonth, -9 * 44, 'm', true)
+      // 日
+      jrollDate.y = getCurrentPosition(jrollDate.scroller.children, date.replace(/^0/, ''))
+      infiniteLoop(jrollDate, -11 * 44, 'd')
     }
     wrap.style.display = 'block'
     setTimeout(function () {

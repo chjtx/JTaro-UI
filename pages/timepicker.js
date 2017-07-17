@@ -10,7 +10,9 @@ export default {
   },
   data: function () {
     return {
-      value: ''
+      value: '',
+      value2: '00:39',
+      value3: '06:00'
     }
   }
 }

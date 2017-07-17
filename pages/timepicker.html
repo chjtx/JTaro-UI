@@ -2,11 +2,16 @@
   .demo-body {
     padding: 15px;
   }
+  .margin-bottom {
+    margin-bottom: 20px;
+  }
 </style>
 <div>
   <DemoHeader title="时间选择器" />
 
   <j-body class="demo-body">
-    <j-timepicker v-model="value" />
+    <j-timepicker class="margin-bottom" v-model="value" />
+    <j-timepicker class="margin-bottom" v-model="value2" />
+    <j-timepicker class="margin-bottom" v-model="value3" />
   </j-body>
 </div>

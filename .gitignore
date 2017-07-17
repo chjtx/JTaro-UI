@@ -3,4 +3,4 @@ node_modules/
 .git/
 npm-debug.log
 build/**
-!build/index.html
+!build/index_template.html

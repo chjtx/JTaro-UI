@@ -1,0 +1,23 @@
+<style>
+  .demo-body {
+    padding: 15px;
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
+  .j-col-4 {
+    padding: 5px;
+  }
+</style>
+<div>
+  <DemoHeader title="图片浏览器" />
+
+  <j-body class="demo-body">
+    <div class="j-row-12">
+      <div v-for="img in images" class="j-col-4">
+        <img :src="img" jroll-viewer-image/>
+      </div>
+    </div>
+  </j-body>
+</div>

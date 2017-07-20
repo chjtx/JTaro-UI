@@ -95,7 +95,7 @@ export default {
           url: ''
         }, {
           name: '图片浏览器（Photo Browser）',
-          url: ''
+          url: 'pages/viewer'
         }, {
           name: '通知（Notification）',
           url: ''

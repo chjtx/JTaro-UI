@@ -38,6 +38,7 @@
     "jroll": "^2.4.12",
     "jroll-infinite": "^2.2.0",
     "jroll-pulldown": "^1.0.0",
+    "jroll-viewer": "^0.2.2",
     "jroll-vue-infinite": "^0.1.0",
     "vue": "^2.3.4"
   }

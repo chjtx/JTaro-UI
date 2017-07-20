@@ -25,7 +25,7 @@ export default {
   components: {
     'DemoHeader': header,
     'j-infinite': JRoll.VueInfinite({
-      total: 3,
+      total: 6,
       tip: '正在加载...',
       completeTip: '已全部加载完成',
       errorTip: '加载失败，上拉重试',

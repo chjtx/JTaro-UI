@@ -1,0 +1,28 @@
+<style>
+  .j-infinite {
+    position: absolute;
+    top: 44px;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+  }
+  .item {
+    list-style-type: none;
+    height: 36px;
+    line-height: 36px;
+    border-bottom: 1px solid #ddd;
+    padding-left: 20px;
+  }
+  .jroll-infinite-tip {
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+  }
+</style>
+<div>
+  <DemoHeader title="无限加载" />
+
+  <j-infinite class="j-infinite">
+    <div class="item" v-for="i in items">{{ i + 1 }}</div>
+  </j-infinite>
+</div>

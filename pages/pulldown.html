@@ -1,0 +1,25 @@
+<style>
+  .pulldown-body {
+    position: absolute;
+    top: 44px;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+  }
+  li {
+    list-style-type: none;
+    height: 36px;
+    line-height: 36px;
+    border-top: 1px solid #ddd;
+    padding-left: 20px;
+  }
+</style>
+<div>
+  <DemoHeader title="下拉刷新" />
+
+  <div class="pulldown-body">
+    <ul>
+      <li v-for="item in items">{{ item + 1 }}</li>
+    </ul>
+  </div>
+</div>

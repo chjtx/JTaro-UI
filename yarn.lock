@@ -889,6 +889,18 @@ jroll-fixedinput@^1.2.3:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/jroll-fixedinput/-/jroll-fixedinput-1.2.3.tgz#8adc93739433419349262a78454c3ee6d39fa48c"
 
+jroll-infinite@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/jroll-infinite/-/jroll-infinite-2.2.0.tgz#b75545afa76e5d8f85691f431106b7bf1ec06649"
+
+jroll-pulldown@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/jroll-pulldown/-/jroll-pulldown-1.0.0.tgz#25e70520cefb1cb3baef6eb7ef4a8861d99938a0"
+
+jroll-vue-infinite@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/jroll-vue-infinite/-/jroll-vue-infinite-0.1.0.tgz#662ebc9803636bf6add8196c7021fce5795536b8"
+
 jroll@^2.4.12, jroll@^2.4.5:
   version "2.4.12"
   resolved "https://registry.yarnpkg.com/jroll/-/jroll-2.4.12.tgz#866519c4056b23b270b7e56682f784e6d5f8a944"
@@ -950,9 +962,9 @@ jtaro-module@^0.2.7:
   version "0.2.7"
   resolved "https://registry.yarnpkg.com/jtaro-module/-/jtaro-module-0.2.7.tgz#30650029aef704fcea2f6ea31c9317829400c4ab"
 
-jtaro@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/jtaro/-/jtaro-0.5.0.tgz#854cf73a98273b548b640037a0a8e5e023feff91"
+jtaro@^0.5.1:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/jtaro/-/jtaro-0.5.1.tgz#4e48624d669131b83e04d0b8a2374aa427e87f52"
   dependencies:
     jroll "^2.4.5"
     vue "^2.2.1"

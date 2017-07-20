@@ -448,3 +448,12 @@ yyyy的值最小为1950，最大为2050
 ```html
 <j-timepicker v-model="value" />
 ```
+
+### 下拉刷新
+
+[https://github.com/chjtx/JRoll/tree/master/extends/jroll-pulldown](https://github.com/chjtx/JRoll/tree/master/extends/jroll-pulldown)
+
+### 上拉加载
+
+[https://github.com/chjtx/JRoll/tree/master/extends/jroll-vue-infinite](https://github.com/chjtx/JRoll/tree/master/extends/jroll-vue-infinite)
+

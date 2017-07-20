@@ -80,10 +80,10 @@ export default {
         type: '其它组件',
         children: [{
           name: '下拉刷新（Pulldown Refresh）',
-          url: ''
+          url: 'pages/pulldown'
         }, {
           name: '无限加载（Infinite）',
-          url: ''
+          url: 'pages/infinite'
         }, {
           name: '图片轮播（Swiper）',
           url: ''

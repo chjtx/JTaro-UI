@@ -3,4 +3,5 @@ node_modules/
 .git/
 npm-debug.log
 build/**
+yarn.lock
 !build/index_template.html

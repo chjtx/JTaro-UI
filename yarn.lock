@@ -897,6 +897,10 @@ jroll-pulldown@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/jroll-pulldown/-/jroll-pulldown-1.0.0.tgz#25e70520cefb1cb3baef6eb7ef4a8861d99938a0"
 
+jroll-viewer@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/jroll-viewer/-/jroll-viewer-0.2.2.tgz#f14f37bfa23a34730354a4fe5a7c5dabd999ef14"
+
 jroll-vue-infinite@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/jroll-vue-infinite/-/jroll-vue-infinite-0.1.0.tgz#662ebc9803636bf6add8196c7021fce5795536b8"

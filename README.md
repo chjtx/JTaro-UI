@@ -351,8 +351,33 @@ multiple 为多选标记，多选时value为数组，请保证数组里每一项
 加减器
 
 ```html
-<j-number v-model="value" max="20" min="10" />
+<j-number v-model="value" max="20" min="10" @action="action" @calculate="calculate" nocalculate/>
+
+<script>
+export default {
+  methods: {
+    action(value, sign) {
+      console.log(value, sign) // 1, '+'
+    },
+    calculate(value) {
+
+    }
+  }
+}
+</script>
 ```
+
+属性
+
+| 名称 | 默认值 | 必填 | 说明 |
+| :--: | :--: | :--:| :--- |
+| v-model | -- | Y | 相当于表单的value，不能为空数组|
+| max | 99 | N | 最大值 |
+| min | 0 | N | 最小值 |
+| nocalculate | false | N | 设为`true`将不能调出计数器 |
+| type | 0 | N | 按钮主题：<br>`0` 圆形，默认<br>`1` 圆角矩形 |
+| @action | -- | N | 点击加减按钮触发，回传数值和操作符（-|+） |
+| @calculate | -- | N | 在计数器输入值时触发 |
 
 ### j-picker
 

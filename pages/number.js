@@ -11,7 +11,16 @@ export default {
   data: function () {
     return {
       'value': 1,
-      'value2': 0
+      'value2': 0,
+      'value3': 99
+    }
+  },
+  methods: {
+    action: function (value, sign) {
+      console.log(value, sign)
+    },
+    calculate: function (value) {
+      console.log(value)
     }
   }
 }

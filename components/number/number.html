@@ -1,32 +1,41 @@
 <style>
   this {
     display: inline-block;
-    height: 36px;
+    height: 26px;
   }
   .j-number-left {
     display: block;
     float: left;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
   }
   .j-number-value {
-    height: 36px;
-    width: 70px;
+    height: 26px;
+    width: 36px;
     float: left;
     text-align: center;
-    line-height: 36px;
-    border-top: 1px solid #d7dde4;
-    border-bottom: 1px solid #d7dde4;
+    line-height: 26px;
   }
   .j-number-right {
     display: block;
     float: left;
+  }
+  .value-rectangle {
+    border-top: 1px solid #d7dde4;
+    border-bottom: 1px solid #d7dde4;
+  }
+  .lbtn-rectangle {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .rbtn-rectangle {
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
   }
+  .btn-default {
+    border-radius: 100%;
+  }
 </style>
 <div>
-  <j-button @action="minus" class="j-number-left" width="36" height="36" :type="minType">-</j-button>
-  <div @click="calculator" class="j-number-value">{{ value }}</div>
-  <j-button @action="plus" class="j-number-right" width="36" height="36" :type="maxType">+</j-button>
+  <j-button @action="minus" class="j-number-left" :class="lBtnCss" width="26" height="26" :type="minType" round>-</j-button>
+  <div @click="calculator" class="j-number-value" :class="valueCss">{{ value }}</div>
+  <j-button @action="plus" class="j-number-right" :class="rBtnCss" width="26" height="26" :type="maxType" round>+</j-button>
 </div>

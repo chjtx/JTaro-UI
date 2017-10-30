@@ -1,4 +1,4 @@
-/* global Vue */
+/* global Vue, HTMLElement, JRoll */
 import './number.css'
 import calculator from './number.calculator.js'
 import html from './number.html'
@@ -7,7 +7,7 @@ import html from './number.html'
   v.component('j-number', {
     props: {
       'value': Number,
-      'nocalculate': Boolean,
+      'noCalculate': Boolean,
       'max': {
         validator: function (v) {
           return /\d+/.test(v)
@@ -18,7 +18,8 @@ import html from './number.html'
           return /\d+/.test(v)
         }
       },
-      'type': [Number, String]
+      'type': [Number, String],
+      'throwIn': [HTMLElement, String]
     },
     template: html,
     data: function () {
@@ -59,11 +60,20 @@ import html from './number.html'
           case 1 : return 'rbtn-rectangle'
           default : return 'btn-default'
         }
+      },
+      shoppingcar: function () {
+        if (typeof this.throwIn === 'string') {
+          return document.querySelector(this.throwIn)
+        } else if (this.throwIn instanceof HTMLElement) {
+          return this.throwIn
+        } else {
+          return null
+        }
       }
     },
     methods: {
       calculator: function () {
-        if (!this.nocalculate) {
+        if (!this.noCalculate) {
           calculator.show(this.changeValue.bind(this), this.maxValue, this.minValue)
         }
       },
@@ -74,16 +84,58 @@ import html from './number.html'
           this.$emit('action', val, '-')
         }
       },
-      plus: function () {
+      plus: function (e) {
         var val = this.value + 1
         if (val <= this.maxValue) {
           this.$emit('input', val)
           this.$emit('action', val, '+')
         }
+        if (this.shoppingcar) {
+          this.throwInShoppingCar(e.target)
+        }
       },
       changeValue: function (val, old) {
         this.$emit('input', val)
         this.$emit('calculate', val)
+      },
+      // 投进购物车
+      throwInShoppingCar: function (target) {
+        var pos = JRoll.utils.computePosition(target, document.body)
+        var trs = JRoll.utils.computeTranslate(target, document.body)
+        var pos2 = JRoll.utils.computePosition(this.shoppingcar, document.body)
+        var trs2 = JRoll.utils.computeTranslate(this.shoppingcar, document.body)
+        console.log(pos, trs)
+        console.log(pos2, trs2)
+
+        var ball = document.createElement('div')
+        ball.className = 'j-number-ball j-bg-primary'
+        ball.style.left = (pos.left + 7) + 'px'
+        ball.style.top = (pos.top + 7) + 'px'
+        document.body.appendChild(ball)
+        this.animation(ball, pos.left + trs.x, pos.top + trs.y, pos2.left + trs2.x, pos2.top + trs2.y)
+      },
+      animation: function (el, startX, startY, endX, endY) {
+        var s = endX - startX
+        var p1 = [s / 4 - 20, -30]
+        var p2 = [s / 2 - 20, -40]
+        var p3 = [s / 4 * 3 - 20, -30]
+        var p4 = [endX - startX - 20, 50]
+        var p5 = [endX - startX + 19, endY - startY]
+        setTimeout(function () {
+          el.style.transform = 'translate(' + p1[0] + 'px,' + p1[1] + 'px)'
+          setTimeout(function () {
+            el.style.transform = 'translate(' + p2[0] + 'px,' + p2[1] + 'px)'
+            setTimeout(function () {
+              el.style.transform = 'translate(' + p3[0] + 'px,' + p3[1] + 'px)'
+              setTimeout(function () {
+                el.style.transform = 'translate(' + p4[0] + 'px,' + p4[1] + 'px)'
+                setTimeout(function () {
+                  el.style.transform = 'translate(' + p5[0] + 'px,' + p5[1] + 'px)'
+                }, 100)
+              }, 100)
+            }, 100)
+          }, 100)
+        }, 0)
       }
     }
   })

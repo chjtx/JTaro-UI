@@ -41,8 +41,8 @@ import html from './button.html'
       }
     },
     methods: {
-      a: function () {
-        if (this.type !== 'disabled') this.$emit('action')
+      a: function (e) {
+        if (this.type !== 'disabled') this.$emit('action', e)
       }
     }
   })

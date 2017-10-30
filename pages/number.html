@@ -5,24 +5,36 @@
   p {
     margin-bottom: 10px;
   }
+  #shopping_car {
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    line-height: 50px;
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 100%;
+  }
 </style>
 <div>
   <DemoHeader title="加减器" />
 
   <j-body class="demo-body">
     <p>默认最小0，最大99</p>
-    <j-number v-model="value" @action="action" @calculate="calculate" />
+    <j-number v-model="value" @action="action" @calculate="calculate" throw-in="#shopping_car"/>
 
     <br>
     <br>
 
     <p>自定义最小10，最大20，不能调出计数器</p>
-    <j-number v-model="value2" max="20" min="10" nocalculate/>
+    <j-number v-model="value2" max="20" min="10" no-calculate  throw-in="#shopping_car"/>
 
     <br>
     <br>
 
     <p>圆角矩形</p>
-    <j-number v-model="value3" type="1" />
+    <j-number v-model="value3" type="1"  throw-in="#shopping_car"/>
   </j-body>
+  <div id="shopping_car" class="j-bg-primary">购</div>
 </div>

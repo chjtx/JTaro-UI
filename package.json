@@ -35,7 +35,7 @@
     "rollup-plugin-vue2": "^0.8.0"
   },
   "dependencies": {
-    "jroll": "^2.4.12",
+    "jroll": "^2.6.0",
     "jroll-infinite": "^2.2.0",
     "jroll-pulldown": "^1.0.0",
     "jroll-viewer": "^0.2.2",

@@ -108,8 +108,8 @@ import html from './number.html'
 
         var ball = document.createElement('div')
         ball.className = 'j-number-ball j-bg-primary'
-        ball.style.left = (pos.left + 7) + 'px'
-        ball.style.top = (pos.top + 7) + 'px'
+        ball.style.left = (pos.left + trs.x + 7) + 'px'
+        ball.style.top = (pos.top + trs.y + 7) + 'px'
         document.body.appendChild(ball)
         this.animation(ball, pos.left + trs.x, pos.top + trs.y, pos2.left + trs2.x, pos2.top + trs2.y)
       },

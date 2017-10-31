@@ -105,8 +105,6 @@ import html from './number.html'
         var trs = JRoll.utils.computeTranslate(target, document.body)
         var pos2 = JRoll.utils.computePosition(this.shoppingcar, document.body)
         var trs2 = JRoll.utils.computeTranslate(this.shoppingcar, document.body)
-        console.log(pos, trs)
-        console.log(pos2, trs2)
 
         var ball = document.createElement('div')
         ball.className = 'j-number-ball j-bg-primary'

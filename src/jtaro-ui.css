@@ -146,4 +146,5 @@ div, a, button, input, textarea { outline: none; -webkit-tap-highlight-color: tr
     height: 12px;
     border-radius: 12px;
     transition-duration: 100ms;
+    z-index: 999;
 }

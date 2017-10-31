@@ -12,15 +12,22 @@ export default {
     return {
       'value': 1,
       'value2': 0,
-      'value3': 99
+      'value3': 9,
+      'total': 19
     }
   },
   methods: {
     action: function (value, sign) {
       console.log(value, sign)
+      if (sign === '-') {
+        this.total = this.value + this.value2 + this.value3
+      }
     },
     calculate: function (value) {
-      console.log(value)
+      this.total = this.value + this.value2 + this.value3
+    },
+    addShoppingCar: function () {
+      this.total = this.value + this.value2 + this.value3
     }
   }
 }

@@ -19,7 +19,8 @@ import html from './number.html'
         }
       },
       'type': [Number, String],
-      'throwIn': [HTMLElement, String]
+      'throwIn': [HTMLElement, String],
+      'throwCallback': Function
     },
     template: html,
     data: function () {
@@ -115,26 +116,32 @@ import html from './number.html'
         this.animation(ball, pos.left + trs.x, pos.top + trs.y, pos2.left + trs2.x, pos2.top + trs2.y)
       },
       animation: function (el, startX, startY, endX, endY) {
+        var me = this
         var s = endX - startX
-        var p1 = [s / 4 - 20, -30]
-        var p2 = [s / 2 - 20, -40]
-        var p3 = [s / 4 * 3 - 20, -30]
-        var p4 = [endX - startX - 20, 50]
-        var p5 = [endX - startX + 19, endY - startY]
-        setTimeout(function () {
-          el.style.transform = 'translate(' + p1[0] + 'px,' + p1[1] + 'px)'
+        var p = [
+          [s / 4 - 20, -30],
+          [s / 2 - 20, -40],
+          [s / 4 * 3 - 20, -30],
+          [endX - startX - 20, 50],
+          [endX - startX + 12, endY - startY + 12]
+        ]
+        var i = 0
+        function translate (o) {
+          el.style.transform = 'translate(' + o[0] + 'px,' + o[1] + 'px)'
           setTimeout(function () {
-            el.style.transform = 'translate(' + p2[0] + 'px,' + p2[1] + 'px)'
-            setTimeout(function () {
-              el.style.transform = 'translate(' + p3[0] + 'px,' + p3[1] + 'px)'
-              setTimeout(function () {
-                el.style.transform = 'translate(' + p4[0] + 'px,' + p4[1] + 'px)'
-                setTimeout(function () {
-                  el.style.transform = 'translate(' + p5[0] + 'px,' + p5[1] + 'px)'
-                }, 100)
-              }, 100)
-            }, 100)
-          }, 100)
+            i++
+            if (p[i]) {
+              translate(p[i])
+            } else {
+              document.body.removeChild(el)
+              if (me.throwCallback) {
+                me.throwCallback()
+              }
+            }
+          }, 80)
+        }
+        setTimeout(function () {
+          translate(p[i])
         }, 0)
       }
     }

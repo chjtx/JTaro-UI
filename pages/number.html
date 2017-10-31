@@ -22,19 +22,19 @@
 
   <j-body class="demo-body">
     <p>默认最小0，最大99</p>
-    <j-number v-model="value" @action="action" @calculate="calculate" throw-in="#shopping_car"/>
+    <j-number v-model="value" @action="action" @calculate="calculate" throw-in="#shopping_car" :throw-callback="addShoppingCar"/>
 
     <br>
     <br>
 
     <p>自定义最小10，最大20，不能调出计数器</p>
-    <j-number v-model="value2" max="20" min="10" no-calculate  throw-in="#shopping_car"/>
+    <j-number v-model="value2" @action="action" max="20" min="10" no-calculate  throw-in="#shopping_car" :throw-callback="addShoppingCar"/>
 
     <br>
     <br>
 
     <p>圆角矩形</p>
-    <j-number v-model="value3" type="1"  throw-in="#shopping_car"/>
+    <j-number v-model="value3" @action="action" type="1" @calculate="calculate"  throw-in="#shopping_car" :throw-callback="addShoppingCar"/>
   </j-body>
-  <div id="shopping_car" class="j-bg-primary">购</div>
+  <div id="shopping_car" class="j-bg-primary">{{ total }}</div>
 </div>

@@ -351,13 +351,18 @@ multiple 为多选标记，多选时value为数组，请保证数组里每一项
 加减器
 
 ```html
-<j-number v-model="value" max="20" min="10" throw-in="#shopping_car" :throw-callback="addShoppingCar" @action="action" @calculate="calculate" no-calculate/>
+<j-number v-model="value" max="20" min="10" throw-in="#shopping_car"
+  @throw-callback="addShoppingCar" @plus="plus" @minus="minus"
+  @calculate="calculate" no-calculate/>
 
 <script>
 export default {
   methods: {
-    action(value, sign) {
-      console.log(value, sign) // 1, '+'
+    plus() {
+
+    },
+    minus() {
+    
     },
     calculate(value) {
 
@@ -380,8 +385,9 @@ export default {
 | no-calculate | false | N | 设为`true`将不能调出计数器 |
 | type | 0 | N | 按钮主题：<br>`0` 圆形，默认<br>`1` 圆角矩形 |
 | throw-in | -- | N | 小圆点投进的目标（购物车），可以是字符串或dom元素 |
-| :throw-callback | -- | N | 小圆点投进购物车后的回调 | 
-| @action | -- | N | 点击加减按钮触发，回传数值和操作符（-\|+） |
+| @throw-callback | -- | N | 小圆点投进购物车后的回调 | 
+| @plus | -- | N | 点击加按钮触发 |
+| @minus | -- | N | 点击减按钮触发 |
 | @calculate | -- | N | 在计数器输入值时触发 |
 
 ### j-picker

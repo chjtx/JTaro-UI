@@ -17,11 +17,8 @@ export default {
     }
   },
   methods: {
-    action: function (value, sign) {
-      console.log(value, sign)
-      if (sign === '-') {
-        this.total = this.value + this.value2 + this.value3
-      }
+    minus: function () {
+      this.total = this.value + this.value2 + this.value3
     },
     calculate: function (value) {
       this.total = this.value + this.value2 + this.value3

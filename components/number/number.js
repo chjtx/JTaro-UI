@@ -19,8 +19,7 @@ import html from './number.html'
         }
       },
       'type': [Number, String],
-      'throwIn': [HTMLElement, String],
-      'throwCallback': Function
+      'throwIn': [HTMLElement, String]
     },
     template: html,
     data: function () {
@@ -78,18 +77,18 @@ import html from './number.html'
           calculator.show(this.changeValue.bind(this), this.maxValue, this.minValue)
         }
       },
-      minus: function () {
+      minus: function (e) {
         var val = this.value - 1
         if (val >= this.minValue) {
           this.$emit('input', val)
-          this.$emit('action', val, '-')
+          this.$emit('minus', e)
         }
       },
       plus: function (e) {
         var val = this.value + 1
         if (val <= this.maxValue) {
           this.$emit('input', val)
-          this.$emit('action', val, '+')
+          this.$emit('plus', e)
         }
         if (this.shoppingcar) {
           this.throwInShoppingCar(e.target)
@@ -132,9 +131,7 @@ import html from './number.html'
               translate(p[i])
             } else {
               document.body.removeChild(el)
-              if (me.throwCallback) {
-                me.throwCallback()
-              }
+              me.$emit('throw-callback')
             }
           }, 80)
         }

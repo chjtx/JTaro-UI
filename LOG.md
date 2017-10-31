@@ -1,16 +1,12 @@
 # 更新日志
 
-## v0.0.8 (2017-10-31)
+## (2017-10-31)
 
-- `j-number`修复使用translate偏移过后小球错位的问题
-
-## v0.0.7 (2017-10-31)
-
-- `j-number`微调样式，去除调试信息
-
-## v0.0.6 (2017-10-31)
-
-- `j-number`加减器组件添加投球动效
+- v0.0.10 `j-number`将`:throw-callback`改成`@throw-callback`，解决不能传参的问题
+- v0.0.9 `j-number`将action拆分成plus和minus
+- v0.0.8 `j-number`修复使用translate偏移过后小球错位的问题
+- v0.0.7 `j-number`微调样式，去除调试信息
+- v0.0.6 `j-number`加减器组件添加投球动效
 
 ## v0.0.5 (2017-07-17)
 

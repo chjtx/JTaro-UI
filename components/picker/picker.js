@@ -134,7 +134,7 @@ import html from './picker.html'
               j.jroll.refresh()
             })
           }, 100)
-        }, 4)
+        }, 50)
       },
       hideOptions: function () {
         var me = this

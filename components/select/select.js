@@ -101,7 +101,7 @@ import html from './select.html'
           setTimeout(function () {
             me.showMore(me.jroll.y, me.jroll.maxScrollY)
           }, 300)
-        }, 4)
+        }, 50)
       },
       hideOptions: function () {
         var me = this

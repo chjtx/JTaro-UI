@@ -31,9 +31,9 @@ import html from './dialog.html'
           this.$el.style.display = 'block'
           setTimeout(function () {
             sub.style.transform = 'translate(-50%, -60%)'
-          }, 4)
+          }, 50)
         } else {
-          sub.style.transform = 'translate(-50%, -' + window.innerHeight + 'px)'
+          sub.style.transform = 'translate(-50%, -1000px)'
           setTimeout(function () {
             _this.$el.style.display = 'none'
           }, 300)
@@ -59,7 +59,7 @@ import html from './dialog.html'
         sub.style.transform = 'translate(-50%, -60%)'
       } else {
         this.$el.style.display = 'none'
-        sub.style.transform = 'translate(-50%, -' + window.innerHeight + 'px)'
+        sub.style.transform = 'translate(-50%, -1000px)'
       }
     }
   })

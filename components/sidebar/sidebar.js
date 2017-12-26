@@ -32,7 +32,7 @@ import html from './sidebar.html'
           this.$el.style.display = 'block'
           setTimeout(function () {
             sub.style.transform = 'translateX(0px)'
-          }, 4)
+          }, 50)
         } else {
           sub.style.transform = 'translateX(' + (this.side === 'right' ? '' : '-') + '100%)'
           setTimeout(function () {

@@ -17,7 +17,7 @@ import html from './mask.html'
           this.$el.style.display = 'block'
           setTimeout(function () {
             _this.$el.style.opacity = 1
-          }, 4)
+          }, 10)
         } else {
           this.$el.style.opacity = 0
           setTimeout(function () {

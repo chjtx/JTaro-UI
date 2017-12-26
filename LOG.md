@@ -1,5 +1,9 @@
 # 更新日志
 
+## v0.0.11 (2017-12-26)
+
+- dialog、picker、select、sidebar的setTimeout出现时间由4ms调整为50ms，尽量降低低端设备卡顿感
+
 ## (2017-10-31)
 
 - v0.0.10 `j-number`将`:throw-callback`改成`@throw-callback`，解决不能传参的问题

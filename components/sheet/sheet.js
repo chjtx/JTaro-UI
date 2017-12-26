@@ -37,7 +37,7 @@ import html from './sheet.html'
         this.$el.style.display = 'block'
         setTimeout(function () {
           me.showing = true
-        }, 4)
+        }, 50)
       },
       hideOptions: function () {
         var me = this

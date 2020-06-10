@@ -14,7 +14,7 @@ import html from './select.html'
         thisValue: this.value
       }
     },
-    template: '<li class="j-click-button" :class="css" :value="value" @click="selectValue"><slot></slot></li>',
+    template: '<li class="j-click-button" :class="css" :data-value="value" @click="selectValue"><slot></slot></li>',
     computed: {
       css: function () {
         var selected = this.$parent.multiple
@@ -121,7 +121,7 @@ import html from './select.html'
         if (this.multiple) {
           this.value.forEach(function (v) {
             for (i = 0; i < l; i++) {
-              if (String(v) === String(children[i].value)) {
+              if (String(v) === String(children[i].dataset.value)) {
                 tempArr.push(children[i].innerText)
               }
             }
@@ -131,7 +131,7 @@ import html from './select.html'
         // 单项
         } else {
           for (i = 0; i < l; i++) {
-            if (this.value === String(children[i].value)) {
+            if (this.value === String(children[i].dataset.value)) {
               this.inputValue = children[i].innerText
               break
             }

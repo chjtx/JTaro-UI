@@ -94,7 +94,11 @@
         cancelable: true
       })
       doc.activeElement.blur()
+
+      // 触发点击事件
       clickEvent.target.dispatchEvent(evt)
+
+      // 阻断后面的原生click原生发生
       return false
     }
   }, true)

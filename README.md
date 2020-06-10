@@ -287,9 +287,9 @@ multiple 为多选标记，多选时value为数组，请保证数组里每一项
 ```html
 <!-- 单选 -->
 <j-select v-model="value">
-  <j-options value="1">选项一</j-options>
-  <j-options value="2">选项二</j-options>
-  <j-options value="3">选项三</j-options>
+  <j-option value="1">选项一</j-option>
+  <j-option value="2">选项二</j-option>
+  <j-option value="3">选项三</j-option>
 </j-select>
 
 <script>
@@ -302,9 +302,9 @@ multiple 为多选标记，多选时value为数组，请保证数组里每一项
 ```html
 <!-- 多选 -->
 <j-select v-model="value" multiple>
-  <j-options value="1">选项一</j-options>
-  <j-options value="2">选项二</j-options>
-  <j-options value="3">选项三</j-options>
+  <j-option value="1">选项一</j-option>
+  <j-option value="2">选项二</j-option>
+  <j-option value="3">选项三</j-option>
 </j-select>
 
 <script>
@@ -318,9 +318,9 @@ multiple 为多选标记，多选时value为数组，请保证数组里每一项
 
 ```html
 <j-select v-model="value">
-  <j-options>选项一</j-options>
-  <j-options>选项二</j-options>
-  <j-options>选项三</j-options>
+  <j-option>选项一</j-option>
+  <j-option>选项二</j-option>
+  <j-option>选项三</j-option>
 </j-select>
 ```
 
